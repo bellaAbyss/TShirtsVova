@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
 <ul id="menu">
 	<li data-menuanchor="first" class="active"><a href="#first">Слайд 1</a></li>
@@ -21,27 +22,55 @@
 </ul>
 
 <div id="fullpage">
-	<div class="section active" data-anchor="first">
-		<div class="header">
-			<div class="content">
-				<h1>Стильная футболка с уникальным дизайном за 5 минут</h1>
-
-				<div class="scrollicon">
-					<p>В данном разделе надо указать чем мы занимаемся и что мы вообще продаем, ну и все такое, я тоже
-						подумаю над этим, нужен лозунг, а также название всего) </p>
-				</div>
-
+	<div class="section" id="section0">
+		<div class="wrapper w-50">
+			<div class="fl-l center">
+				<img src="http://www.prakum.com/content/images/thumbs/0001009_dc-comics-batman-black-t-shirt.jpeg"
+				     alt="Cool T-Shirt with cool print"
+				     width="100%">
 			</div>
+			<div class="shade w-100 h-100"></div>
+			<p class="title">
+				Стильная футболка с уникальным дизайном за 10 минут
+			</p>
+			<div class="show-form">
+				Оформить заказ и получить скидку 5%
+			</div>
+			<form action="#">
+				<label for="name"></label>
+				<input type="text" id="name" name="name" placeholder="Имя">
+				<label for="phone"></label>
+				<input type="text" id="phone" name="phone" placeholder="Телефон">
+				<label for="email"></label>
+				<input type="email" id="email" name="email" placeholder="e-mail">
+				<label for="addition"></label>
+				<textarea name="addition" 
+				          id="addition" 
+				          cols="30" 
+				          rows="10" 
+				          placeholder="Введите комментарий к заказу (доставка или самовывоз)">
+				</textarea>
+				<input type="submit" value="Оформить заказ">
+			</form>
 		</div>
 	</div>
-	<div class="section" data-anchor="second">
+	<div class="section" id="section1">
+		<div class="wrapper">
+			<p>
+				Почему выбирать футболку &lt;NAME&gt;
+			</p>
 
+		</div>
 	</div>
-	<div class="section" data-anchor="third">
+	<div class="section" id="section2">
+		<div class="wrapper">
 
+		</div>
 	</div>
-	<div class="section" data-anchor="fourth">
+	<div class="section" id="section3">
+		<div class="wrapper">
 
+		</div>
 	</div>
 </div>
 
@@ -52,9 +81,14 @@
 		$('#fullpage').fullpage({
 			anchors: ['first', 'second', 'third', 'fourth'],
 			menu: '#menu',
-			sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+			sectionsColor: ['#262019', '#262019', '#262019', '#262019'],
 			css3: true,
-			scrollingSpeed: 1000
+			scrollingSpeed: 1000,
+			loopTop: true,
+			loopBottom: true,
+			easing: 'easeOutBack',
+			easingcss3: 'ease',
+			paddingTop: '60px'
 		});
 	});
 </script>

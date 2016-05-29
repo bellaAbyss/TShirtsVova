@@ -1,9 +1,10 @@
-﻿html, body {
+﻿/* Общие стили */
+html, body {
 	height: 100%;
 }
 
 body {
-	font: normal 100% 'Comfortaa', cursive;
+	font: normal 100% 'Helvetica Neue', cursive;
 	margin: 0;
 	padding: 0;
 	color: #fff;
@@ -21,6 +22,10 @@ img {
 	max-width: 100%;
 }
 
+.section {
+	text-align: center;
+}
+
 .content {
 	width: 960px;
 	max-width: 100%;
@@ -33,10 +38,7 @@ img {
 	clear: both;
 }
 
-#fullpage {
-
-}
-
+/* Меню в шапке сайта */
 #menu {
 	height: 60px;
 	left: 0;
@@ -47,30 +49,49 @@ img {
 	width: 100%;
 	z-index: 70;
 	text-align: center;
-	background: #000000;
+	font-size: 18px;
+	font-weight: 200;
+	background: rgba(38, 32, 25, 1);
 }
 
 #menu li {
-	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5, 255);
-	border-radius: 4px;
-	color: #000;
 	display: inline-block;
 	margin: 10px;
+	color: #9C856E;
+	background: inherit;
+	-webkit-border-radius: 10px;
+	/*border-radius: 10px;*/
 }
 
-#menu li a, #menu li.active a {
-	color: #20B2AA;
-	display: block;
-	padding: 9px 18px;
+#menu li a {
 	text-decoration: none;
-
+	color: #9C856E;
 }
 
 #menu li.active {
-	background: none;
+	background: inherit;
+	color: #F7C220;
 }
 
-/**/
+#menu li.active a {
+	color: #F7C220;
+}
+
+#menu li a,
+#menu li.active a {
+	padding: 9px 18px;
+	display: block;
+}
+
+#menu li.active a:hover {
+	color: #D1B9A1;
+}
+
+#menu li:hover a {
+	background: inherit;
+	color: #D1B9A1;
+}
+
 #header {
 	height: 100%;
 	min-height: 300px !important;
@@ -106,14 +127,6 @@ img {
 	text-align: justify;
 }
 
-.scrollicon, .imgNumber {
-	text-align: center;
-}
-
-.imgNumber img {
-	margin-top: 12%;
-}
-
 .backToSitehereBtn {
 	display: block;
 	width: 150px;
@@ -138,3 +151,43 @@ img {
 	left: -10px;
 	transform: rotate(-45deg) scale(1.3);
 }
+
+.wrap {
+	overflow: hidden;
+	position: relative;
+	height: 100%;
+}
+
+.shade {
+	position: absolute;
+	display: block;
+	background-color: #262019;
+	opacity: 0.9;
+	width: 100%;
+	height: 100%;
+}
+
+.title {
+	float: none;
+	width: 50%;
+	position: absolute;
+	font-size: 3em;
+	font-weight: 200;
+	font-stretch: ultra-expanded;
+	color: #D1B9A1;
+}
+
+.fl-l {	float: left; }
+.fl-r {	float: right; }
+
+.pos-abs { position: absolute; }
+
+.w-100 { width:100%; }
+.w-50 { width: 50%; }
+.w-25 { width: 25%; }
+
+.h-100 { height: 100%; }
+
+.center { text-align: center; }
+
+.mt-60 { margin-top: 60px; }
