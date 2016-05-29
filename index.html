@@ -12,7 +12,6 @@
 	<link rel="stylesheet" href="css/jquery.fullPage.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-	<script src="js/changingImages.js"></script>
 </head>
 
 <body>
@@ -27,23 +26,37 @@
 	<div class="section" id="section0">
 		<div class="wrapper">
 			<div class="back first-background vignette"></div>
-			<p class="title mt-60">
+			<p class="title first mt-60">
 				Стильная футболка с уникальным дизайном за 10 минут
 			</p>
-			<div class="show-form">
-				Оформить заказ и получить скидку 5%
-			</div>
+			<input type="submit" class="show-form mt-60" value="Оформить заказ и получить скидку 5%">
 			<form id="order-purchase" action="#" method="post">
-				<label for="name">Ваше имя</label>
-				<input type="text" id="name" name="name" placeholder="Имя">
-				<label for="phone">Ваш телефон</label>
-				<input type="text" id="phone" name="phone" placeholder="Телефон">
-				<label for="email">Ваш e-mail адрес</label>
-				<input type="email" id="email" name="email" placeholder="e-mail">
-				<label for="addition">Комментарий к заказу</label>
-				<textarea name="addition" id="addition" cols="30" rows="10" placeholder="Введите комментарий к заказу (доставка или самовывоз)">
-				</textarea>
-				<input type="submit" value="Оформить заказ">
+				<table>
+					<tr>
+						<td class="labels"><label for="name">Ваше имя: </label></td>
+						<td class="fields"><input type="text" id="name" placeholder="Имя"/></td>
+					</tr>
+					<tr>
+						<td class="labels"><label for="phone">Ваш телефон: </label></td>
+						<td class="fields"><input type="tel" id="phone" placeholder="+71234567890"/></td>
+					</tr>
+					<tr>
+						<td class="labels"><label for="email">E-mail:</label></td>
+						<td class="fields"><input type="email" id="email" placeholder="example@gmail.com"></td>
+					</tr>
+					<tr>
+						<td class="labels"><label for="addition">Ваши комментарии:</label></td>
+						<td class="fields">
+							<textarea id="addition" placeholder="Введите комментарий к заказу (доставка или самовывоз)"></textarea>
+						</td>
+					</tr>
+					<tr style="text-align: right;">
+						<td colspan="2">
+							<input type="submit" id="submit" value="Оформить заказ"/>
+							<input type="submit" id="cancel" value="Подумать еще"/>
+						</td>
+					</tr>
+				</table>
 			</form>
 		</div>
 	</div>
@@ -115,6 +128,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/jquery.fullPage.min.js"></script>
+<script src="js/changingImages.js"></script>
+<script src="js/showForm.js"></script>
 <script>
 	$(document).ready(function () {
 		$('#fullpage').fullpage({
