@@ -30,10 +30,10 @@
 			<p class="title mt-60">
 				Стильная футболка с уникальным дизайном за 10 минут
 			</p>
-			<div class="show-form mt-60">
+			<div class="show-form">
 				Оформить заказ и получить скидку 5%
 			</div>
-			<form id="order-purchase" action="#">
+			<form id="order-purchase" action="#" method="post">
 				<label for="name">Ваше имя</label>
 				<input type="text" id="name" name="name" placeholder="Имя">
 				<label for="phone">Ваш телефон</label>
@@ -41,11 +41,7 @@
 				<label for="email">Ваш e-mail адрес</label>
 				<input type="email" id="email" name="email" placeholder="e-mail">
 				<label for="addition">Комментарий к заказу</label>
-				<textarea name="addition" 
-				          id="addition" 
-				          cols="30" 
-				          rows="10" 
-				          placeholder="Введите комментарий к заказу (доставка или самовывоз)">
+				<textarea name="addition" id="addition" cols="30" rows="10" placeholder="Введите комментарий к заказу (доставка или самовывоз)">
 				</textarea>
 				<input type="submit" value="Оформить заказ">
 			</form>

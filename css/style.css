@@ -196,15 +196,18 @@ img {
 	font-size: 2.5em;
 	font-weight: lighter;
 	opacity: 1;
-	display: none;
 }
 
 form#order-purchase {
+	position: relative;
 	display: block;
+	width: 50%;
+	text-align: left;
 }
 
 input, label {
 	display: block;
+	text-align: left;
 }
 
 .fl-l {	float: left; }
