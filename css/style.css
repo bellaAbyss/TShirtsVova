@@ -7,7 +7,7 @@ body {
 	font: normal 100% 'Helvetica Neue', cursive;
 	margin: 0;
 	padding: 0;
-	color: #fff;
+	color: #E9E9E9;
 }
 
 * {
@@ -51,13 +51,13 @@ img {
 	text-align: center;
 	font-size: 18px;
 	font-weight: 200;
-	background: rgba(38, 32, 25, 1);
+	background: #424242;
 }
 
 #menu li {
 	display: inline-block;
 	margin: 10px;
-	color: #9C856E;
+	color: #E9E9E9;
 	background: inherit;
 	-webkit-border-radius: 10px;
 	/*border-radius: 10px;*/
@@ -65,16 +65,16 @@ img {
 
 #menu li a {
 	text-decoration: none;
-	color: #9C856E;
+	color: #E9E9E9;
 }
 
 #menu li.active {
 	background: inherit;
-	color: #F7C220;
+	color: #FF9900;
 }
 
 #menu li.active a {
-	color: #F7C220;
+	color: #FF9900;
 }
 
 #menu li a,
@@ -84,59 +84,24 @@ img {
 }
 
 #menu li.active a:hover {
-	color: #D1B9A1;
+	color: #BCBCBC;
 }
 
 #menu li:hover a {
 	background: inherit;
-	color: #D1B9A1;
+	color: #BCBCBC;
 }
 
-#header {
-	height: 100%;
-	min-height: 300px !important;
-	position: relative;
-}
-
-#header .wrap {
-	left: 50%;
-	max-width: 800px;
-	padding: 0 15px;
-	position: absolute;
-	text-align: center;
-	top: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	width: 100%;
-}
-
-#header h1 {
-	font-size: 65px;
-	font-weight: 900;
-	line-height: 95px;
-	padding-top: 50px;
-	margin: 0 0 20px;
-	text-align: center;
-}
-
-#header p {
-	font-size: 32px;
-	font-weight: 300;
-	line-height: 36px;
-	padding: 20px;
-	text-align: justify;
-}
-
-.backToSitehereBtn {
+.backToPurchasingBtn {
 	display: block;
 	width: 150px;
 	height: 150px;
-	background: #01BC78;
+	background: #3299BB;
 	text-align: center;
 	line-height: 170px;
 	font-size: 20px;
 	border-radius: 50%;
-	color: #fff;
+	color: #E9E9E9;
 	position: absolute;
 	text-decoration: none;
 	top: 29px;
@@ -145,36 +110,101 @@ img {
 	transition: all 0.25s linear;
 }
 
-.backToSitehereBtn:hover {
+.backToPurchasingBtn:hover {
 	text-decoration: none;
 	top: 30px;
 	left: -10px;
 	transform: rotate(-45deg) scale(1.3);
 }
 
-.wrap {
+.wrapper {
 	overflow: hidden;
 	position: relative;
-	height: 100%;
-}
-
-.shade {
-	position: absolute;
-	display: block;
-	background-color: #262019;
-	opacity: 0.9;
 	width: 100%;
 	height: 100%;
 }
 
-.title {
-	float: none;
-	width: 50%;
+/* Общее для фоновых картинок */
+.back {
 	position: absolute;
+	background-size: cover;
+	opacity: 0.2;
+	top: 0;
+	min-height: 100%;
+}
+
+.vignette {
+	-webkit-box-shadow:
+			inset 0 0 100px #424242,
+			inset 0 0 100px #424242,
+			inset 0 0 100px #424242;
+
+	-moz-box-shadow:
+			inset 0 0 100px #424242,
+			inset 0 0 100px #424242,
+			inset 0 0 100px #424242;
+
+	box-shadow:
+			inset 0 0 100px #424242,
+			inset 0 0 100px #424242,
+			inset 0 0 100px #424242;
+}
+
+/* Фоновая картинка для первого слайда */
+.first-background {
+	width: 50%;
+	background-image: url("http://www.prakum.com/content/images/thumbs/0001009_dc-comics-batman-black-t-shirt.jpeg");
+	float: left;
+}
+
+/* Фоны для последнего слайда */
+.left-bckg {
+	left: 0;
+	width: 33.3%;
+	background-image: url("http://img.allw.mn/content/www/2011/04/8-fun-printed-t-shirts/1_jersey-shore-situation-tee_8-fun-printed-t-shirts.jpg");
+}
+
+.right-bckg {
+	right: 0;
+	width: 33.3%;
+	background-image: url("http://images.kooves.com/uploads/products/50262_86e32eb5d893d09a93501cf01d56bc85_image1_default.jpg");
+	background-size: cover;
+}
+
+.mid-bckg {
+	left: 33.3%;
+	width: 33.4%;
+	background-image: url("http://hideyourarms.com/wp-content/uploads/2014/01/4_akimski_1.jpg");
+}
+
+.title {
+	position: relative;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
 	font-size: 3em;
-	font-weight: 200;
-	font-stretch: ultra-expanded;
-	color: #D1B9A1;
+	font-weight: lighter;
+	letter-spacing: 5px;
+	color: #E9E9E9;
+}
+
+.show-form {
+	position: relative;
+	display: inline-block;
+	padding: 20px 25px;
+	background: #3299BB;
+	font-size: 2.5em;
+	font-weight: lighter;
+	opacity: 1;
+	display: none;
+}
+
+form#order-purchase {
+	display: block;
+}
+
+input, label {
+	display: block;
 }
 
 .fl-l {	float: left; }
@@ -182,7 +212,6 @@ img {
 
 .pos-abs { position: absolute; }
 
-.w-100 { width:100%; }
 .w-50 { width: 50%; }
 .w-25 { width: 25%; }
 

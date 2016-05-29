@@ -1,0 +1,84 @@
+/*Carousel on the main page*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.transform {
+	margin-right: 10px !important;
+	position: relative;
+	z-index: 50;
+}
+
+.transform:last-child {
+	margin-right: 0;
+}
+
+.transformice {
+	width: auto;
+	height: auto;
+	margin: auto;
+	display: block;
+	position: absolute;
+	z-index: 0;
+}
+
+.stop {
+	border: none;
+	text-align: center;
+	margin: auto;
+	display: inline-block;
+}
+
+.main {
+	width: 100%;
+	line-height: 100%;
+}
+
+.carousel {
+	width: 90%;
+	text-align: center;
+	box-sizing: border-box;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.carousel img {
+	width: 100%;
+	height: auto;
+}
+
+@media screen and (max-width: 720px) {
+	.carousel {
+		max-width: 540px;
+		margin: 20px auto;
+	}
+
+	.stop {
+		width: 180px;
+		height: 270px;
+	}
+}
+
+@media screen and (min-width: 721px) and (max-width: 1080px) {
+	.carousel {
+		margin: 20px auto;
+	}
+
+	.stop {
+		width: 240px;
+		height: 360px;
+	}
+}
+
+@media screen and (min-width: 1081px) {
+	.carousel {
+		margin: 20px auto;
+	}
+
+	.stop {
+		width: 320px;
+		height: 380px;
+	}
+}

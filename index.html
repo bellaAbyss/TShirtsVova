@@ -8,9 +8,11 @@
 	<meta name="keywords" content="стильные футболки, футболка, футболки, футболки с принтом">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/carousel.css">
 	<link rel="stylesheet" href="css/jquery.fullPage.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<script src="js/changingImages.js"></script>
 </head>
 
 <body>
@@ -23,27 +25,22 @@
 
 <div id="fullpage">
 	<div class="section" id="section0">
-		<div class="wrapper w-50">
-			<div class="fl-l center">
-				<img src="http://www.prakum.com/content/images/thumbs/0001009_dc-comics-batman-black-t-shirt.jpeg"
-				     alt="Cool T-Shirt with cool print"
-				     width="100%">
-			</div>
-			<div class="shade w-100 h-100"></div>
-			<p class="title">
+		<div class="wrapper">
+			<div class="back first-background vignette"></div>
+			<p class="title mt-60">
 				Стильная футболка с уникальным дизайном за 10 минут
 			</p>
-			<div class="show-form">
+			<div class="show-form mt-60">
 				Оформить заказ и получить скидку 5%
 			</div>
-			<form action="#">
-				<label for="name"></label>
+			<form id="order-purchase" action="#">
+				<label for="name">Ваше имя</label>
 				<input type="text" id="name" name="name" placeholder="Имя">
-				<label for="phone"></label>
+				<label for="phone">Ваш телефон</label>
 				<input type="text" id="phone" name="phone" placeholder="Телефон">
-				<label for="email"></label>
+				<label for="email">Ваш e-mail адрес</label>
 				<input type="email" id="email" name="email" placeholder="e-mail">
-				<label for="addition"></label>
+				<label for="addition">Комментарий к заказу</label>
 				<textarea name="addition" 
 				          id="addition" 
 				          cols="30" 
@@ -56,20 +53,65 @@
 	</div>
 	<div class="section" id="section1">
 		<div class="wrapper">
-			<p>
+			<p class="title">
 				Почему выбирать футболку &lt;NAME&gt;
 			</p>
-
+			<div class="card">
+				<img src="" alt="Уникальный дизайн">
+				<p class="card-title">Уникальный дизайн</p>
+				<p class="card-desc">
+					Мелкий текст
+				</p>
+			</div>
+			<div class="card">
+				<img src="" alt="Высокое качество">
+				<p class="card-title">Высокое качество</p>
+				<p class="card-desc">
+					Мелкий текст
+				</p>
+			</div>
+			<div class="card">
+				<img src="" alt="Стильный крой">
+				<p class="card-title">Стильный крой</p>
+				<p class="card-desc">
+					Мелкий текст
+				</p>
+			</div>
+			<div class="backToPurchasingBtn">Оформить заказ</div>
 		</div>
 	</div>
 	<div class="section" id="section2">
 		<div class="wrapper">
-
+			<p class="title">Процесс создания футболок &lt;NAME&gt;</p>
+			<div class="carousel">
+				<div class="transform stop">
+					<img class="transformice" data-order="1"
+					     src="http://img.allw.mn/content/www/2011/04/8-fun-printed-t-shirts/1_jersey-shore-situation-tee_8-fun-printed-t-shirts.jpg"/>
+					<img class="transformice" data-order="2"
+					     src="http://images.kooves.com/uploads/products/50262_86e32eb5d893d09a93501cf01d56bc85_image1_default.jpg"/>
+					<img class="transformice" data-order="3"
+					     src="http://hideyourarms.com/wp-content/uploads/2014/01/4_akimski_1.jpg"/>
+				</div>
+				<div class="transform stop">
+					<img class="transformice" data-order="1"
+					     src="http://images.kooves.com/uploads/products/50262_86e32eb5d893d09a93501cf01d56bc85_image1_default.jpg"/>
+					<img class="transformice" data-order="2"
+					     src="http://hideyourarms.com/wp-content/uploads/2014/01/4_akimski_1.jpg"/>
+					<img class="transformice" data-order="3"
+					     src="http://img.allw.mn/content/www/2011/04/8-fun-printed-t-shirts/1_jersey-shore-situation-tee_8-fun-printed-t-shirts.jpg"/>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="section" id="section3">
 		<div class="wrapper">
-
+			<div class="bckg">
+				<div class="back left-bckg vignette"></div>
+				<div class="back mid-bckg vignette"></div>
+				<div class="back right-bckg vignette"></div>
+			</div>
+			<p class="title">Доставка в пределах Москвы и МО</p>
+			<div class="backToPurchasingBtn">Получить скидку</div>
 		</div>
 	</div>
 </div>
@@ -81,7 +123,7 @@
 		$('#fullpage').fullpage({
 			anchors: ['first', 'second', 'third', 'fourth'],
 			menu: '#menu',
-			sectionsColor: ['#262019', '#262019', '#262019', '#262019'],
+			sectionsColor: ['#424242', '#424242', '#424242', '#424242'],
 			css3: true,
 			scrollingSpeed: 1000,
 			loopTop: true,
