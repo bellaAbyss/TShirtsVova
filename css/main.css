@@ -132,9 +132,74 @@ form#order-purchase {
       border-color: #FE2045; }
   form#order-purchase textarea {
     height: 150px; }
-  form#order-purchase input[type='text'], form#order-purchase input[type='tel'], form#order-purchase input[type='email'] {
+  form#order-purchase input[type='text'], form#order-purchase input[type='tel'], form#order-purchase input[type='email'], form#order-purchase textarea {
     padding: 5px 0 5px 5px;
     width: 300px;
     font-weight: 400; }
+  form#order-purchase input[type='submit'] {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    background-color: #3299BB;
+    color: #E9E9E9;
+    font-weight: 700;
+    font-variant: small-caps;
+    letter-spacing: 2px; }
+  form#order-purchase table tr {
+    text-align: center; }
+  form#order-purchase table .labels {
+    margin-right: 15px;
+    text-align: right;
+    color: #E9E9E9;
+    font-weight: lighter; }
+  form#order-purchase table .fields {
+    padding: 10px 0 10px 10px;
+    text-align: right;
+    color: #424242;
+    font-size: 1em; }
+
+/* Заголовки на слайдах */
+.title {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  color: #E9E9E9;
+  font-size: 3em;
+  font-weight: lighter;
+  letter-spacing: 5px; }
+
+.vignette {
+  -webkit-box-shadow: inset 0 0 100px #424242, inset 0 0 100px #424242, inset 0 0 100px #424242;
+  -moz-box-shadow: inset 0 0 100px #424242, inset 0 0 100px #424242, inset 0 0 100px #424242;
+  box-shadow: inset 0 0 100px #424242, inset 0 0 100px #424242, inset 0 0 100px #424242; }
+
+/* Вспомогательные классы */
+.fl-l {
+  float: left; }
+
+.fl-r {
+  float: right; }
+
+.pos-abs {
+  position: absolute; }
+
+.w-50 {
+  width: 50%; }
+
+.w-25 {
+  width: 25%; }
+
+.h-100 {
+  height: 100%; }
+
+.center {
+  text-align: center; }
+
+.mt-60 {
+  margin-top: 60px; }
+
+.mt-40 {
+  margin-top: 40px; }
 
 /*# sourceMappingURL=main.css.map */

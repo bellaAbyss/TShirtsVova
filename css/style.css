@@ -148,24 +148,24 @@ img {
 }
 
 /* Фоны для последнего слайда */
-.left-bckg {
-	left: 0;
-	width: 33.3%;
-	background-image: url("http://img.allw.mn/content/www/2011/04/8-fun-printed-t-shirts/1_jersey-shore-situation-tee_8-fun-printed-t-shirts.jpg");
-}
+/*.left-bckg {*/
+	/*left: 0;*/
+	/*width: 33.3%;*/
+	/*background-image: url("http://img.allw.mn/content/www/2011/04/8-fun-printed-t-shirts/1_jersey-shore-situation-tee_8-fun-printed-t-shirts.jpg");*/
+/*}*/
 
-.right-bckg {
-	right: 0;
-	width: 33.3%;
-	background-image: url("http://images.kooves.com/uploads/products/50262_86e32eb5d893d09a93501cf01d56bc85_image1_default.jpg");
-	background-size: cover;
-}
+/*.right-bckg {*/
+	/*right: 0;*/
+	/*width: 33.3%;*/
+	/*background-image: url("http://images.kooves.com/uploads/products/50262_86e32eb5d893d09a93501cf01d56bc85_image1_default.jpg");*/
+	/*background-size: cover;*/
+/*}*/
 
-.mid-bckg {
-	left: 33.3%;
-	width: 33.4%;
-	background-image: url("http://hideyourarms.com/wp-content/uploads/2014/01/4_akimski_1.jpg");
-}
+/*.mid-bckg {*/
+	/*left: 33.3%;*/
+	/*width: 33.4%;*/
+	/*background-image: url("http://hideyourarms.com/wp-content/uploads/2014/01/4_akimski_1.jpg");*/
+/*}*/
 
 .title {
 	position: relative;

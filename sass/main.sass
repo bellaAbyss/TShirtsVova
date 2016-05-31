@@ -143,7 +143,65 @@ form#order-purchase
 			border-color: $focused-elem-border
 	textarea
 		height: 150px
-	input[type='text'], input[type='tel'], input[type='email']
+	input[type='text'], input[type='tel'], input[type='email'], textarea
 		padding: 5px 0 5px 5px
 		width: 300px
 		font-weight: 400
+	input[type='submit']
+		padding: 10px 20px
+		margin: 10px 0
+		border: none
+		background-color: $btn-color
+		color: $text-color
+		font-weight: 700
+		font-variant: small-caps
+		letter-spacing: 2px
+	table
+		tr
+			text-align: center
+		.labels
+			margin-right: 15px
+			text-align: right
+			color: $text-color
+			font-weight: lighter
+		.fields
+			padding: 10px 0 10px 10px
+			text-align: right
+			color: $background-color
+			font-size: 1em
+
+/* Заголовки на слайдах */
+.title
+	position: relative
+	margin-left: auto
+	margin-right: auto
+	width: 70%
+	color: #E9E9E9
+	font-size: 3em
+	font-weight: lighter
+	letter-spacing: 5px
+
+.vignette
+	-webkit-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+	-moz-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+	box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+
+/* Вспомогательные классы */
+.fl-l
+	float: left
+.fl-r
+	float: right
+.pos-abs
+	position: absolute
+.w-50
+	width: 50%
+.w-25
+	width: 25%
+.h-100
+	height: 100%
+.center
+	text-align: center
+.mt-60
+	margin-top: 60px
+.mt-40
+	margin-top: 40px
