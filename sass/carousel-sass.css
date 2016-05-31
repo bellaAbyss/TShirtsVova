@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.transform {
+  margin-right: 10px !important;
+  position: relative;
+  z-index: 50; }
+
+.transform:last-child {
+  margin-right: 0; }
+
+.transformice {
+  width: auto;
+  height: auto;
+  margin: auto;
+  display: block;
+  position: absolute;
+  z-index: 0; }
+
+/*# sourceMappingURL=carousel-sass.css.map */

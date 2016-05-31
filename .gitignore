@@ -1,3 +1,4 @@
 #PhpStorm project files
 .idea/
 *.iml
+.sass-cache/
