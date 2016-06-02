@@ -7,12 +7,15 @@
 	<meta name="author" content="Darya Kiryanova">
 	<meta name="description" content="Landing page for selling cool, high quality printed T-Shirts">
 	<meta name="keywords" content="стильные футболки, футболка, футболки, футболки с принтом">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/carousel.css">
 	<link rel="stylesheet" href="vendor/css/jquery.fullPage.css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300,700&subset=latin,cyrillic' rel='stylesheet'
+	      type='text/css'>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 
 <body>
@@ -26,65 +29,57 @@
 <div id="fullpage">
 	<div class="section" id="section0">
 		<div class="wrapper">
-			<div class="back first-background vignette"></div>
+			<div class="transform stop back">
+				<img class="transformice" data-order="1"
+				     src="http://static.tumblr.com/60f5c279485de3163d3e9b49819a9d5c/trgguwk/yGIn9mbx6/tumblr_static_e7ie52e5hog0oogokggw8gk0o.jpg"
+				     alt=""
+				     width="100%" height="100%">
+				<img class="transformice" data-order="2"
+				     src="http://eskipaper.com/images/cool-wallpapers-13.jpg" alt=""
+				     width="100%" height="100%">
+			</div>
+			<div class="back vignette"></div>
 			<p class="title first mt-60">
 				Стильная футболка с уникальным дизайном за 10 минут
 			</p>
-			<input type="submit" class="show-form-btn mt-60" value="Оформить заказ и получить скидку 5%">
-			<form id="order-purchase" action="#" method="post">
-				<table>
-					<tr>
-						<td class="labels"><label for="name">Ваше имя: </label></td>
-						<td class="fields"><input type="text" id="name" placeholder="Имя"/></td>
-					</tr>
-					<tr>
-						<td class="labels"><label for="phone">Ваш телефон: </label></td>
-						<td class="fields"><input type="tel" id="phone" placeholder="+71234567890"/></td>
-					</tr>
-					<tr>
-						<td class="labels"><label for="email">E-mail:</label></td>
-						<td class="fields"><input type="email" id="email" placeholder="example@gmail.com"></td>
-					</tr>
-					<tr>
-						<td class="labels"><label for="addition">Ваши комментарии:</label></td>
-						<td class="fields">
-							<textarea id="addition" placeholder="Введите комментарий к заказу (доставка или самовывоз)"></textarea>
-						</td>
-					</tr>
-					<tr style="text-align: right;">
-						<td colspan="2">
-							<input type="submit" id="submit" value="Оформить заказ"/>
-							<input type="submit" id="cancel" value="Подумать еще"/>
-						</td>
-					</tr>
-				</table>
-			</form>
+			<input type="submit" class="purchase-btn mt-60" value="Оформить заказ и получить скидку 5%">
 		</div>
 	</div>
 	<div class="section" id="section1">
 		<div class="wrapper">
+			<img class="back" src="http://eskipaper.com/images/cool-wallpapers-13.jpg" alt="" width="100%" height="100%">
+			<div class="back vignette"></div>
 			<p class="title">
 				Почему выбирать футболку &lt;NAME&gt;
 			</p>
 			<div class="card">
-				<img src="" alt="Уникальный дизайн">
+				<p class="unique-design-card br-50"></p>
 				<p class="card-title">Уникальный дизайн</p>
 				<p class="card-desc">
-					Мелкий текст
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					Accusantium, consequuntur corporis dolore, explicabo,
+					inventore minus modi molestias rerum sit tempore totam velit.
+					Itaque, perspiciatis porro.
 				</p>
 			</div>
 			<div class="card">
-				<img src="" alt="Высокое качество">
+				<p class="high-quality-card br-50"></p>
 				<p class="card-title">Высокое качество</p>
 				<p class="card-desc">
-					Мелкий текст
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					Accusantium, consequuntur corporis dolore, explicabo,
+					inventore minus modi molestias rerum sit tempore totam velit.
+					Itaque, perspiciatis porro.
 				</p>
 			</div>
 			<div class="card">
-				<img src="" alt="Стильный крой">
+				<p class="style-form-card br-50"></p>
 				<p class="card-title">Стильный крой</p>
 				<p class="card-desc">
-					Мелкий текст
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					Accusantium, consequuntur corporis dolore, explicabo,
+					inventore minus modi molestias rerum sit tempore totam velit.
+					Itaque, perspiciatis porro.
 				</p>
 			</div>
 			<div class="backToPurchasingBtn">Оформить заказ</div>
@@ -92,6 +87,8 @@
 	</div>
 	<div class="section" id="section2">
 		<div class="wrapper">
+			<img class="back" src="http://eskipaper.com/images/cool-wallpapers-13.jpg" alt="" width="100%" height="100%">
+			<div class="back vignette"></div>
 			<p class="title">Процесс создания футболок &lt;NAME&gt;</p>
 			<div class="carousel">
 				<div class="transform stop">
@@ -115,11 +112,15 @@
 	</div>
 	<div class="section" id="section3">
 		<div class="wrapper">
-			<div class="bckg">
-				<div class="back left-bckg vignette"></div>
-				<div class="back mid-bckg vignette"></div>
-				<div class="back right-bckg vignette"></div>
+			<div class="transform stop back">
+				<img class="transformice vignette" data-order="1"
+				     src="http://static.tumblr.com/60f5c279485de3163d3e9b49819a9d5c/trgguwk/yGIn9mbx6/tumblr_static_e7ie52e5hog0oogokggw8gk0o.jpg"
+				     alt=""
+				     width="100%" height="100%">
+				<img class="transformice vignette" data-order="2"
+				     src="http://eskipaper.com/images/cool-wallpapers-13.jpg" alt="" width="100%" height="100%">
 			</div>
+			<div class="back vignette"></div>
 			<p class="title">Доставка в пределах Москвы и МО</p>
 			<div class="backToPurchasingBtn">Получить скидку</div>
 		</div>
@@ -135,7 +136,7 @@
 		$('#fullpage').fullpage({
 			anchors: ['first', 'second', 'third', 'fourth'],
 			menu: '#menu',
-			sectionsColor: ['#424242', '#424242', '#424242', '#424242'],
+			sectionsColor: ['#000000', '#000000', '#000000', '#000000'],
 			css3: true,
 			scrollingSpeed: 1000,
 			loopTop: true,

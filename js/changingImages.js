@@ -1,7 +1,7 @@
 var transforms = document.getElementsByClassName("transform");
 console.log(transforms);
 var index = 1;
-setInterval(function() {
+setInterval(function () {
 	var imgs = [];
 	for (var i = 0; i < transforms.length; i++) {
 		imgs = transforms[i].getElementsByTagName("img");
@@ -14,4 +14,4 @@ setInterval(function() {
 	index++;
 	if (index > imgs.length)
 		index = 1;
-}, 1500);
+}, 3000);
