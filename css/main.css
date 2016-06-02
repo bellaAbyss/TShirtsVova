@@ -6,6 +6,7 @@ html, body {
 body {
   margin: 0;
   padding: 0;
+  background-color: #000000;
   font-family: "Helvetica Neue", sans-serif;
   color: #E9E9E9; }
 
@@ -20,15 +21,6 @@ img {
 
 .section {
   text-align: center; }
-
-.content {
-  width: 960px;
-  max-width: 100%;
-  margin: 0 auto; }
-  .content:after {
-    display: table;
-    clear: both;
-    content: ""; }
 
 /* Верхнее меню */
 #menu {
@@ -71,6 +63,7 @@ img {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  padding-top: 60px;
   text-align: center; }
 
 /* Для фоновых картинок */
@@ -183,21 +176,18 @@ form#order-purchase {
   display: inline-block;
   width: 300px;
   margin: 20px 10px 20px 10px;
-  padding: 10px; }
-  .card .unique-design-card {
+  padding: 10px;
+  text-align: center; }
+  .card .image {
     position: inherit;
     width: 280px;
-    height: 280px;
+    height: 280px; }
+  .card .unique-design-card {
     background-image: url("http://tlt-land.ru/journal/images/design.jpg"); }
   .card .high-quality-card {
-    position: inherit;
-    width: 280px;
-    height: 280px;
     background-image: url("http://brainhack.org/wp-content/uploads/sites//sites/3/2014/05/n-doors-lighting-guality01.jpeg"); }
   .card .style-form-card {
     position: inherit;
-    width: 280px;
-    height: 280px;
     background-image: url("http://img3.st.klumba-ua.com/img/used/2016/04/20/9710/9710828_2.jpg"); }
   .card .card-title {
     font-size: 120%;
@@ -207,9 +197,6 @@ form#order-purchase {
     height: 80px;
     vertical-align: bottom; }
 
-/*@media for big screens */
-/*@media for tablets */
-/*@media for smartphones */
 /* Вспомогательные классы */
 .fl-l {
   float: left; }
@@ -242,5 +229,78 @@ form#order-purchase {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%; }
+
+/* Мобильные экраны (портретная ориентация) */
+@media only screen and (max-width: 440px) and (orientation: portrait) {
+  body {
+    font-size: 10px; }
+
+  .section {
+    padding-top: 30px; }
+
+  #menu {
+    width: 100%;
+    height: 30px; }
+    #menu li {
+      width: 20%;
+      margin: 0;
+      padding: 0; }
+      #menu li a {
+        padding: 5px 0;
+        font-size: 10px; }
+    #menu li.active a {
+      padding: 0; }
+
+  .title {
+    width: 100%; }
+
+  #section1 .title, #section2 .title {
+    margin-top: 20px;
+    font-size: 15px; }
+
+  .purchase-btn {
+    width: 95%;
+    text-align: center;
+    white-space: normal; }
+
+  .section1 .purchase-btn, .section3 .purchase-btn {
+    position: absolute !important;
+    bottom: 10px; }
+
+  .card {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    vertical-align: middle; }
+    .card .image {
+      position: relative;
+      float: left;
+      width: 150px;
+      height: 150px; }
+    .card .card-title, .card .card-desc {
+      position: relative;
+      float: right; } }
+/* Мобильный экран (альбомная ориентация) */
+@media only screen and (max-width: 780px) and (orientation: landscape) {
+  .section {
+    margin: 0;
+    margin-left: 70px; }
+
+  #menu {
+    width: auto; }
+    #menu li {
+      position: relative;
+      display: block;
+      width: 70px; } }
+@media screen and (min-width: 1081px) {
+  .carousel {
+    margin: 20px auto; }
+
+  .stop {
+    width: 100%;
+    height: 380px; } }
 
 /*# sourceMappingURL=main.css.map */
