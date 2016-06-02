@@ -1,5 +1,6 @@
 // font
 $font-main: 'Helvetica Neue', sans-serif
+$font-size: 20px
 
 // colors
 $background-color: #000000
@@ -17,6 +18,7 @@ html, body
 body
 	margin: 0
 	padding: 0
+	background-color: $background-color
 	font-family: $font-main
 	color: $text-color
 
@@ -31,15 +33,6 @@ img
 
 .section
 	text-align: center
-
-.content
-	width: 960px
-	max-width: 100%
-	margin: 0 auto
-	&:after
-		display: table
-		clear: both
-		content: ""
 
 /* Верхнее меню */
 #menu
@@ -56,7 +49,6 @@ img
 	font-size: 20px
 	font-variant: small-caps
 	font-weight: 200
-
 	li
 		display: inline-block
 		margin: 10px
@@ -83,6 +75,7 @@ img
 	width: 100%
 	height: 100%
 	overflow: hidden
+	padding-top: 60px
 	text-align: center
 
 /* Для фоновых картинок */
@@ -185,7 +178,7 @@ form#order-purchase
 	margin-left: auto
 	margin-right: auto
 	width: 70%
-	color: #E9E9E9
+	color: $text-color
 	font-size: 3em
 	font-weight: lighter
 	letter-spacing: 5px
@@ -197,20 +190,17 @@ form#order-purchase
 	width: 300px
 	margin: 20px 10px 20px 10px
 	padding: 10px
-	.unique-design-card
+	text-align: center
+	.image
 		position: inherit
 		width: 280px
 		height: 280px
+	.unique-design-card
 		background-image: url('http://tlt-land.ru/journal/images/design.jpg')
 	.high-quality-card
-		position: inherit
-		width: 280px
-		height: 280px
 		background-image: url('http://brainhack.org/wp-content/uploads/sites//sites/3/2014/05/n-doors-lighting-guality01.jpeg')
 	.style-form-card
 		position: inherit
-		width: 280px
-		height: 280px
 		background-image: url('http://img3.st.klumba-ua.com/img/used/2016/04/20/9710/9710828_2.jpg')
 	.card-title
 		font-size: 120%
@@ -219,30 +209,6 @@ form#order-purchase
 		display: inline-block
 		height: 80px
 		vertical-align: bottom
-
-/*@media for big screens*/
-@media screen and (min-width: 1081px)
-//.card
-//	width: 300px
-//	height: 420px
-//	margin-right: 10px
-//	&:last-child
-//		margin-right: 0
-
-/*@media for tablets*/
-@media screen and (min-width: 721px) and (max-width: 1080px)
-//.card
-//	width: 33%
-//	margin-bottom: 5px
-
-/*@media for smartphones*/
-@media screen and (max-width: 720px)
-//.card
-//	display: block
-//	width: 80%
-//	margin-left: auto
-//	margin-right: auto
-//	margin-bottom: 10px
 
 /* Вспомогательные классы */
 .fl-l
@@ -277,20 +243,78 @@ form#order-purchase
 	-moz-border-radius: 50%
 	border-radius: 50%
 
-@media screen and (max-width: 720px)
-	.carousel
-		max-width: 540px
-		margin: 20px auto
-	.stop
-		width: 180px
-		height: 270px
+/* Мобильные экраны (портретная ориентация) */
+@media only screen and (max-width: 440px) and (orientation: portrait)
+	body
+		font-size: $font-size / 2
+
+	.section
+		padding-top: 30px
+
+	#menu
+		width: 100%
+		height: 30px
+		li
+			width: 20%
+			margin: 0
+			padding: 0
+			a
+				padding: 5px 0
+				font-size: $font-size / 2
+		li.active
+			a
+				padding: 0
+
+	.title
+		width: 100%
+
+	#section1, #section2
+		.title
+			margin-top: 20px
+			font-size: $font-size * 0.75
+
+	.purchase-btn
+		width: 95%
+		text-align: center
+		white-space: normal
+
+	.section1, .section3
+		.purchase-btn
+			position: absolute !important
+			bottom: 10px
+
+	.card
+		position: relative
+		display: block
+		width: 100%
+		padding: 5px
+		box-sizing: border-box
+		margin-top: 10px
+		vertical-align: middle
+		.image
+			position: relative
+			float: left
+			width: 150px
+			height: 150px
+		.card-title, .card-desc
+			position: relative
+			float: right
+
+/* Мобильный экран (альбомная ориентация) */
+@media only screen and (max-width: 780px) and (orientation: landscape)
+	.section
+		margin: 0
+		margin-left: 70px
+
+	#menu
+		width: auto
+		li
+			position: relative
+			display: block
+			width: 70px
 
 @media screen and (min-width: 721px) and (max-width: 1080px)
-	.carousel
-		margin: 20px auto
-	.stop
-		width: 100%
-		height: 360px
+
 
 @media screen and (min-width: 1081px)
 	.carousel

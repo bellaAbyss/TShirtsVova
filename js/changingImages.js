@@ -4,7 +4,7 @@ var index = 1;
 setInterval(function () {
 	var imgs = [];
 	for (var i = 0; i < transforms.length; i++) {
-		imgs = transforms[i].getElementsByTagName("img");
+		imgs = transforms[i].getElementsByClassName("transformice");
 		for (var j = 0; j < imgs.length; j++)
 			if (imgs[j].getAttribute("data-order") == index)
 				imgs[j].style.zIndex = 10;
