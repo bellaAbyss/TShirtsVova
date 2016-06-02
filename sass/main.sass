@@ -2,7 +2,7 @@
 $font-main: 'Helvetica Neue', sans-serif
 
 // colors
-$background-color: #424242
+$background-color: #000000
 $text-color: #E9E9E9
 $active-text-color: #FF9900
 $hover-text-color: #BCBCBC
@@ -22,6 +22,7 @@ body
 
 *
 	box-sizing: border-box
+
 p
 	margin: 0
 
@@ -52,7 +53,8 @@ img
 	padding: 0
 	background: $background-color
 	text-align: center
-	font-size: 18px
+	font-size: 20px
+	font-variant: small-caps
 	font-weight: 200
 
 	li
@@ -81,15 +83,21 @@ img
 	width: 100%
 	height: 100%
 	overflow: hidden
+	text-align: center
 
 /* Для фоновых картинок */
 .back
 	position: absolute
 	top: 0
 	left: 0
+	min-width: 100%
 	min-height: 100%
 	background-size: cover
-	opacity: 0.2
+
+.vignette
+	-webkit-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+	-moz-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+	box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
 
 .backToPurchasingBtn
 	position: absolute
@@ -113,10 +121,11 @@ img
 		text-decoration: none
 		transform: rotate(-45deg) scale(1.3)
 
-.show-form-btn
-	position: absolute
+.purchase-btn
+	position: relative
 	display: block
-	margin-left: 25%
+	margin-left: auto
+	margin-right: auto
 	padding: 20px 25px
 	border: none
 	background: #3299BB
@@ -181,27 +190,111 @@ form#order-purchase
 	font-weight: lighter
 	letter-spacing: 5px
 
-.vignette
-	-webkit-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
-	-moz-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
-	box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+/* Карточки причин */
+.card
+	position: relative
+	display: inline-block
+	width: 300px
+	margin: 20px 10px 20px 10px
+	padding: 10px
+	.unique-design-card
+		position: inherit
+		width: 280px
+		height: 280px
+		background-image: url('http://tlt-land.ru/journal/images/design.jpg')
+	.high-quality-card
+		position: inherit
+		width: 280px
+		height: 280px
+		background-image: url('http://brainhack.org/wp-content/uploads/sites//sites/3/2014/05/n-doors-lighting-guality01.jpeg')
+	.style-form-card
+		position: inherit
+		width: 280px
+		height: 280px
+		background-image: url('http://img3.st.klumba-ua.com/img/used/2016/04/20/9710/9710828_2.jpg')
+	.card-title
+		font-size: 120%
+		font-weight: 500
+	.card-desc
+		display: inline-block
+		height: 80px
+		vertical-align: bottom
+
+/*@media for big screens*/
+@media screen and (min-width: 1081px)
+//.card
+//	width: 300px
+//	height: 420px
+//	margin-right: 10px
+//	&:last-child
+//		margin-right: 0
+
+/*@media for tablets*/
+@media screen and (min-width: 721px) and (max-width: 1080px)
+//.card
+//	width: 33%
+//	margin-bottom: 5px
+
+/*@media for smartphones*/
+@media screen and (max-width: 720px)
+//.card
+//	display: block
+//	width: 80%
+//	margin-left: auto
+//	margin-right: auto
+//	margin-bottom: 10px
 
 /* Вспомогательные классы */
 .fl-l
 	float: left
+
 .fl-r
 	float: right
+
 .pos-abs
 	position: absolute
+
 .w-50
 	width: 50%
+
 .w-25
 	width: 25%
+
 .h-100
 	height: 100%
+
 .center
 	text-align: center
-.mt-60
-	margin-top: 60px
+
 .mt-40
 	margin-top: 40px
+
+.mt-60
+	margin-top: 60px
+
+.br-50
+	-webkit-border-radius: 50%
+	-moz-border-radius: 50%
+	border-radius: 50%
+
+@media screen and (max-width: 720px)
+	.carousel
+		max-width: 540px
+		margin: 20px auto
+	.stop
+		width: 180px
+		height: 270px
+
+@media screen and (min-width: 721px) and (max-width: 1080px)
+	.carousel
+		margin: 20px auto
+	.stop
+		width: 100%
+		height: 360px
+
+@media screen and (min-width: 1081px)
+	.carousel
+		margin: 20px auto
+	.stop
+		width: 100%
+		height: 380px

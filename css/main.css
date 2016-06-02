@@ -40,9 +40,10 @@ img {
   height: 60px;
   margin: 0;
   padding: 0;
-  background: #424242;
+  background: #000000;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
+  font-variant: small-caps;
   font-weight: 200; }
   #menu li {
     display: inline-block;
@@ -69,16 +70,22 @@ img {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  text-align: center; }
 
 /* Для фоновых картинок */
 .back {
   position: absolute;
   top: 0;
   left: 0;
+  min-width: 100%;
   min-height: 100%;
-  background-size: cover;
-  opacity: 0.2; }
+  background-size: cover; }
+
+.vignette {
+  -webkit-box-shadow: inset 0 0 100px #000000, inset 0 0 100px #000000, inset 0 0 100px #000000;
+  -moz-box-shadow: inset 0 0 100px #000000, inset 0 0 100px #000000, inset 0 0 100px #000000;
+  box-shadow: inset 0 0 100px #000000, inset 0 0 100px #000000, inset 0 0 100px #000000; }
 
 .backToPurchasingBtn {
   position: absolute;
@@ -102,10 +109,11 @@ img {
     text-decoration: none;
     transform: rotate(-45deg) scale(1.3); }
 
-.show-form-btn {
-  position: absolute;
+.purchase-btn {
+  position: relative;
   display: block;
-  margin-left: 25%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px 25px;
   border: none;
   background: #3299BB;
@@ -113,7 +121,7 @@ img {
   font-size: 2.5em;
   font-weight: lighter;
   cursor: pointer; }
-  .show-form-btn:active {
+  .purchase-btn:active {
     background-color: #32BBBB; }
 
 /* Стили для формы отправки заказа */
@@ -155,7 +163,7 @@ form#order-purchase {
   form#order-purchase table .fields {
     padding: 10px 0 10px 10px;
     text-align: right;
-    color: #424242;
+    color: #000000;
     font-size: 1em; }
 
 /* Заголовки на слайдах */
@@ -169,11 +177,39 @@ form#order-purchase {
   font-weight: lighter;
   letter-spacing: 5px; }
 
-.vignette {
-  -webkit-box-shadow: inset 0 0 100px #424242, inset 0 0 100px #424242, inset 0 0 100px #424242;
-  -moz-box-shadow: inset 0 0 100px #424242, inset 0 0 100px #424242, inset 0 0 100px #424242;
-  box-shadow: inset 0 0 100px #424242, inset 0 0 100px #424242, inset 0 0 100px #424242; }
+/* Карточки причин */
+.card {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  margin: 20px 10px 20px 10px;
+  padding: 10px; }
+  .card .unique-design-card {
+    position: inherit;
+    width: 280px;
+    height: 280px;
+    background-image: url("http://tlt-land.ru/journal/images/design.jpg"); }
+  .card .high-quality-card {
+    position: inherit;
+    width: 280px;
+    height: 280px;
+    background-image: url("http://brainhack.org/wp-content/uploads/sites//sites/3/2014/05/n-doors-lighting-guality01.jpeg"); }
+  .card .style-form-card {
+    position: inherit;
+    width: 280px;
+    height: 280px;
+    background-image: url("http://img3.st.klumba-ua.com/img/used/2016/04/20/9710/9710828_2.jpg"); }
+  .card .card-title {
+    font-size: 120%;
+    font-weight: 500; }
+  .card .card-desc {
+    display: inline-block;
+    height: 80px;
+    vertical-align: bottom; }
 
+/*@media for big screens */
+/*@media for tablets */
+/*@media for smartphones */
 /* Вспомогательные классы */
 .fl-l {
   float: left; }
@@ -196,10 +232,15 @@ form#order-purchase {
 .center {
   text-align: center; }
 
+.mt-40 {
+  margin-top: 40px; }
+
 .mt-60 {
   margin-top: 60px; }
 
-.mt-40 {
-  margin-top: 40px; }
+.br-50 {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
 
 /*# sourceMappingURL=main.css.map */
