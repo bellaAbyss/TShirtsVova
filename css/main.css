@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /* Общие стили */
+* {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", sans-serif; }
+
 html, body {
   height: 100%; }
 
@@ -7,11 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000000;
-  font-family: "Helvetica Neue", sans-serif;
   color: #E9E9E9; }
-
-* {
-  box-sizing: border-box; }
 
 p {
   margin: 0; }
