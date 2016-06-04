@@ -14,14 +14,14 @@ $focused-elem-border: #FE2045
 /* Общие стили */
 *
 	box-sizing: border-box
+	margin: 0
+	padding: 0
 	font-family: $font-main
 
 html, body
 	height: 100%
 
 body
-	margin: 0
-	padding: 0
 	background-color: $background-color
 	color: $text-color
 
@@ -31,8 +31,49 @@ p
 img
 	max-width: 100%
 
+/* Центрирование текста в каждой секции */
+/* --------------------------------------- */
 .section
 	text-align: center
+
+/* Фон будет заполнять всю секцию целиком */
+/* --------------------------------------- */
+#section0,
+#section1,
+#section2,
+#section3,
+#section4,
+#slide1,
+#slide2,
+#slide3,
+#slide4
+	margin: 0
+	padding: 60px 0 0 0
+	background-size: cover
+	background-attachment: fixed
+	-webkit-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+	-moz-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+	box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+
+/* Определение фона секций */
+/* --------------------------------------- */
+#section0
+	background-image: url('../img/bg1.jpg')
+#section1
+	background-image: url('../img/bg2.jpg')
+#section2
+	background-image: url('../img/bg3.jpg')
+#section3
+	background-image: url('../img/bg4.jpg')
+#section4
+	background-image: url('../img/bg5.jpg')
+
+/* Определение фона слайдов */
+/* --------------------------------------- */
+#slide1
+	background-image: url('../img/bg2.jpg')
+#slide2
+	background-image: url('../img/bg5.jpg')
 
 /* Верхнее меню */
 #menu
@@ -72,25 +113,13 @@ img
 /* Обертка для слайдов */
 .wrapper
 	position: relative
-	width: 100%
-	height: 100%
-	overflow: hidden
-	padding-top: 60px
-	text-align: center
-
-/* Для фоновых картинок */
-.back
-	position: absolute
 	top: 0
 	left: 0
-	min-width: 100%
-	min-height: 100%
-	background-size: cover
-
-.vignette
-	-webkit-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
-	-moz-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
-	box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+	width: 100%
+	height: 100%
+	margin: 0
+	padding: 60px 0 0 0
+	text-align: center
 
 .backToPurchasingBtn
 	position: absolute

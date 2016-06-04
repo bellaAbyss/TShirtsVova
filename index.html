@@ -9,8 +9,10 @@
 	<meta name="keywords" content="стильные футболки, футболка, футболки, футболки с принтом">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
 	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/carousel.css">
+	<link rel="stylesheet" href="css/animation.css">
+	<link rel="stylesheet" href="css/form.css">
 	<link rel="stylesheet" href="vendor/css/jquery.fullPage.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css">
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -18,7 +20,7 @@
 
 <body>
 <ul id="menu">
-	<li data-menuanchor="first" class="active"><a href="#first">Слайд 1</a></li>
+	<li data-menuanchor="first" class="active"><a href="#first">Главная</a></li>
 	<li data-menuanchor="second"><a href="#second">Слайд 2</a></li>
 	<li data-menuanchor="third"><a href="#third">Слайд 3</a></li>
 	<li data-menuanchor="fourth"><a href="#fourth">Слайд 4</a></li>
@@ -27,25 +29,20 @@
 
 <div id="fullpage">
 	<div class="section" id="section0">
+		<div class="back vignette"></div>
+
 		<div class="wrapper">
-			<div class="transform stop back">
-				<div class="transformice first-back" data-order="1"	></div>
-				<div class="transformice second-back" data-order="2"></div>
-			</div>
-			<div class="back vignette"></div>
 			<p class="title first mt-60">
 				Стильная футболка с уникальным дизайном за 10 минут
 			</p>
-
 			<a href="#fifth" class="purchase-btn mt-60">Оформить заказ и получить скидку 5%</a>
 		</div>
 	</div>
+
 	<div class="section" id="section1">
+		<div class="back vignette"></div>
+
 		<div class="wrapper">
-			<div class="back">
-				<div class="first-back"></div>
-			</div>
-			<div class="back vignette"></div>
 			<p class="title mt-40">
 				Почему выбирать футболку &lt;NAME&gt;
 			</p>
@@ -85,11 +82,15 @@
 		</div>
 	</div>
 	<div class="section" id="section2">
+		<div class="slide" id="slide1"> Slide 1 </div>
+		<div class="slide" id="slide2"> Slide 2 </div>
+		<div class="slide" id="slide3"> Slide 3 </div>
+		<div class="slide" id="slide4"> Slide 4 </div>
 		<div class="wrapper">
 			<div class="back">
 				<div class="first-back"></div>
 			</div>
-			<div class="back vignette"></div>
+			<div class="vignette back"></div>
 			<p class="title">Процесс создания футболок &lt;NAME&gt;</p>
 			<!--<div class="carousel">-->
 				<!--<div class="transform stop">-->
@@ -189,21 +190,20 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
 <script src="vendor/js/jquery.fullPage.min.js"></script>
 <script src="js/changingImages.js"></script>
-<script src="js/showForm.js"></script>
+<script src="js/form.js"></script>
 <script>
 	$(document).ready(function () {
 		$('#fullpage').fullpage({
 			anchors: ['first', 'second', 'third', 'fourth', 'fifth'],
 			menu: '#menu',
 			sectionsColor: ['#000000', '#000000', '#000000', '#000000', '#000000'],
-			css3: true,
+			css3: false,
 			scrollingSpeed: 1000,
 			loopTop: true,
-			loopBottom: true,
-			easing: 'easeOutBack',
-			easingcss3: 'ease'
+			loopBottom: true
 		});
 	});
 </script>

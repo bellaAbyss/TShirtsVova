@@ -1,12 +1,11 @@
 $(document).ready(function() {
-	$.prototype.mask = function(mask) {
-		
-	};
-	
 	$.prototype.serialize = function() {
 		var data = {};
 		this.find("input").each(function(index, item) {
-			data[item.id] = item.value;
+			if (item.type == "checkbox")
+                data[item.id] = item.checked;
+            else
+                data[item.id] = item.value;
 		});
 		return JSON.stringify({data: data});
 	};
@@ -22,8 +21,8 @@ $(document).ready(function() {
 	var notifier = form.find('#form-success');
 	
 	var name = form.find('#name');
-	name.keypress(function(event) {
-		if (/^[^A-ZА-Я]$/i.test(event.key))
+	name.keydown(function(event) {
+		if (/^[0-9]$/i.test(event.key))
 			event.preventDefault();
 	});
 	
@@ -31,7 +30,7 @@ $(document).ready(function() {
 	var phone = form.find('input#phone');
 	var numbers = [];
 	
-	phone.keypress(function(event) {
+	phone.keydown(function(event) {
 		if (event.key == "Tab")
 			return;
 		if (event.key == "Backspace")
@@ -58,7 +57,7 @@ $(document).ready(function() {
 		var length = numbers.length;
 		var string = "";
 		
-		if (length > 0)
+		if (length >= 0)
 			string = "+7 (" + numbers.slice(0, 3).join("");
 		if (length >= 3)
 			string = string + ") " + numbers.slice(3, 6).join("");
@@ -75,8 +74,8 @@ $(document).ready(function() {
 		var checked = toggle.prop("checked");
 		form.find('.form-optional')
 			.css('display', checked ? 'block' : 'none');
-		form.find('.form-optional input')
-			.attr("required", checked);
+		// form.find('.form-optional input')
+		// 	.attr("required", checked);
 	});
 	form.find('.form-optional').css('display', 'none');
 	
@@ -92,15 +91,21 @@ $(document).ready(function() {
 		if (!validity) {
 			return;
 		}
-		var data = form.serialize();
-		/*$.ajax({
-		 method: 'POST',
-		 async: true,
-		 url: "/echo",
-		 data: data
-		 })
-		 .always(function(data) {
-		 console.log(data);
-		 });*/
+
+		$.ajax({
+			method: 'POST',
+			async: true,
+			url: "/Action.php",
+			data: { "data": form.serialize() }
+		})
+            .done(function(data) {
+				notifier.html("Hoorah!");
+			})
+			.fail(function(data) {
+				notifier.html("Error");
+			})
+			.always(function(data) {
+				console.log(data);
+			});
 	});
 });
