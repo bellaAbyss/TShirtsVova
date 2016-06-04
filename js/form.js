@@ -2,7 +2,10 @@ $(document).ready(function() {
 	$.prototype.serialize = function() {
 		var data = {};
 		this.find("input").each(function(index, item) {
-			data[item.id] = item.value;
+			if (item.type == "checkbox")
+                data[item.id] = item.checked;
+            else
+                data[item.id] = item.value;
 		});
 		return JSON.stringify({data: data});
 	};
@@ -71,8 +74,8 @@ $(document).ready(function() {
 		var checked = toggle.prop("checked");
 		form.find('.form-optional')
 			.css('display', checked ? 'block' : 'none');
-		form.find('.form-optional input')
-			.attr("required", checked);
+		// form.find('.form-optional input')
+		// 	.attr("required", checked);
 	});
 	form.find('.form-optional').css('display', 'none');
 	
@@ -88,13 +91,14 @@ $(document).ready(function() {
 		if (!validity) {
 			return;
 		}
+
 		$.ajax({
 			method: 'POST',
 			async: true,
-			url: "/Mail.php",
+			url: "/Action.php",
 			data: { "data": form.serialize() }
 		})
-			.done(function(data) {
+            .done(function(data) {
 				notifier.html("Hoorah!");
 			})
 			.fail(function(data) {

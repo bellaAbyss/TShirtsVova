@@ -3,3 +3,9 @@
 *.iml
 .sass-cache/
 sass/*.css
+
+# Composer files
+composer.lock
+vendor/
+!vendor/js
+!vendor/css
