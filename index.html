@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/carousel.css">
 	<link rel="stylesheet" href="vendor/css/jquery.fullPage.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css">
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -133,7 +134,7 @@
 			</div>
 			<div class="back vignette"></div>
 			<p class="title">Оформление заказа</p>
-			<form>
+			<form style="z-index: 100; position: relative;">
 				<div id="form-success"></div>
 
 				<div class="form-content">
@@ -146,7 +147,7 @@
 					<div class="form-field-content">
 						<label for="phone" class="form-label">Phone:</label>
 						<input id="phone" class="form-field"
-						       type="tel" reuqired
+						       type="tel" required
 						       pattern="\+[7] [(]\d{3}[)] \d{3}-\d{2}-\d{2}"
 						       placeholder="+7 (495) 123-45-67">
 					</div>
@@ -154,7 +155,7 @@
 					<div class="form-field-content">
 						<label for="email" class="form-label">EMail:</label>
 						<input id="email" class="form-field"
-						       type="email" pattern=".*@.*\..*"
+						       type="email"
 						       placeholder="EMail">
 					</div>
 
@@ -168,7 +169,7 @@
 						<div class="form-field-content">
 							<label for="date" class="form-label">Date:</label>
 							<input id="date" class="form-field"
-							       type="time" pattern="\d{2}\.\d{2}\.\d{4} \d{2}:\d{2}"
+							       type="text" pattern="\d{2}\.\d{2}\.\d{4} \d{2}:\d{2}"
 							       placeholder="Date and Time">
 						</div>
 
@@ -190,8 +191,10 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="vendor/js/jquery.fullPage.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
 <script src="js/changingImages.js"></script>
 <script src="js/showForm.js"></script>
+<script src="js/form.js"></script>
 <script>
 	$(document).ready(function () {
 		$('#fullpage').fullpage({
