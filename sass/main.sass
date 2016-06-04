@@ -12,6 +12,10 @@ $btn-active-color: #32BBBB
 $focused-elem-border: #FE2045
 
 /* Общие стили */
+*
+	box-sizing: border-box
+	font-family: $font-main
+
 html, body
 	height: 100%
 
@@ -19,11 +23,7 @@ body
 	margin: 0
 	padding: 0
 	background-color: $background-color
-	font-family: $font-main
 	color: $text-color
-
-*
-	box-sizing: border-box
 
 p
 	margin: 0
@@ -46,7 +46,7 @@ img
 	padding: 0
 	background: $background-color
 	text-align: center
-	font-size: 20px
+	font-size: $font-size
 	font-variant: small-caps
 	font-weight: 200
 	li
