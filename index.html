@@ -8,9 +8,7 @@
 	<meta name="description" content="Landing page for selling cool, high quality printed T-Shirts">
 	<meta name="keywords" content="стильные футболки, футболка, футболки, футболки с принтом">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/animation.css">
-	<link rel="stylesheet" href="css/form.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="vendor/css/jquery.fullPage.css">
 	<link rel="stylesheet"
 	      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css">
@@ -41,7 +39,7 @@
 			Почему выбирать футболку &lt;NAME&gt;
 		</p>
 		<div class="card mt-40">
-			<div class="image unique-design-card br-50"></div>
+			<div class="image unique-design-card"></div>
 			<div class="card-desc">
 				<div class="card-title">Уникальный дизайн</div>
 				<p>
@@ -52,7 +50,7 @@
 			</div>
 		</div>
 		<div class="card mt-40">
-			<div class="image high-quality-card br-50"></div>
+			<div class="image high-quality-card"></div>
 			<div class="card-desc">
 				<div class="card-title">Высокое качество</div>
 				<p>
@@ -63,7 +61,7 @@
 			</div>
 		</div>
 		<div class="card mt-40">
-			<div class="image style-form-card br-50"></div>
+			<div class="image style-form-card"></div>
 			<div class="card-desc">
 				<div class="card-title">Стильный крой</div>
 				<p>
@@ -82,10 +80,11 @@
 		<div class="slide" id="slide1">
 			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
 			<div class="process">
-				<img class="process-icon"
-				     src="http://img.allw.mn/content/www/2011/04/8-fun-printed-t-shirts/1_jersey-shore-situation-tee_8-fun-printed-t-shirts.jpg">
+				<div class="process-icon">
+					<img src="http://img.allw.mn/content/www/2011/04/8-fun-printed-t-shirts/1_jersey-shore-situation-tee_8-fun-printed-t-shirts.jpg">
+				</div>
 				<div class="process-desc">
-					<h2>Блаблабла</h2>
+					<h2>Собираем хлопок</h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut autem cupiditate
 						delectus doloremque est eum explicabo, fugit hic illum ipsa minus modi mollitia odit quaerat
@@ -98,11 +97,11 @@
 		<div class="slide" id="slide2">
 			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
 			<div class="process">
-				<img class="process-icon"
-				     src="http://images.kooves.com/uploads/products/50262_86e32eb5d893d09a93501cf01d56bc85_image1_default.jpg"
-				     alt="">
+				<div class="process-icon">
+					<img src="http://images.kooves.com/uploads/products/50262_86e32eb5d893d09a93501cf01d56bc85_image1_default.jpg">
+				</div>
 				<div class="process-desc">
-					<h2></h2>
+					<h2>Синтезируем краски</h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab at consequatur in laudantium optio
 						temporibus voluptatibus! Assumenda culpa debitis explicabo fugiat obcaecati placeat quisquam rem
@@ -115,10 +114,11 @@
 		<div class="slide" id="slide3">
 			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
 			<div class="process">
-				<img class="process-icon" src="http://hideyourarms.com/wp-content/uploads/2014/01/4_akimski_1.jpg"
-				     alt="">
+				<div class="process-icon">
+					<img src="http://hideyourarms.com/wp-content/uploads/2014/01/4_akimski_1.jpg">
+				</div>
 				<div class="process-desc">
-					<h2></h2>
+					<h2>Шьем футболку</h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur dolore fugiat
 						hic in incidunt obcaecati officia quis quo voluptates! Alias beatae doloribus iure magnam,
@@ -131,9 +131,11 @@
 		<div class="slide" id="slide4">
 			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
 			<div class="process">
-				<img class="process-icon" src="" alt="">
+				<div class="process-icon">
+					<img src="img/bg2.jpg">
+				</div>
 				<div class="process-desc">
-					<h2></h2>
+					<h2>Делаем принт</h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias at commodi debitis earum eius
 						est eveniet, ex impedit laboriosam maxime necessitatibus optio perferendis rem rerum saepe ut,
@@ -221,10 +223,7 @@
 			css3: false,
 			scrollingSpeed: 1000,
 			loopTop: true,
-			loopBottom: true,
-			slidesNavigation: true,
-			responsiveWidth: 900,
-			responsiveHeight: 900
+			loopBottom: true
 		});
 	});
 </script>

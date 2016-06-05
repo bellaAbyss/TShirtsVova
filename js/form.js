@@ -21,9 +21,18 @@ $(document).ready(function() {
 	var notifier = form.find('#form-success');
 	
 	var name = form.find('#name');
-	name.keydown(function(event) {
-		if (/^[0-9]$/i.test(event.key))
-			event.preventDefault();
+	// name.keydown(function(event) {
+	// 	if (/^[0-9]$/i.test(event.key))
+	// 		event.preventDefault();
+	// });
+
+	name.keypress(function(event) {
+		console.log("keypress", event);
+		var key = event.key || String.fromCharCode(event.charCode);
+		if (/^[0-9]$/i.test(key)) {
+			// event.preventDefault();
+			return false;
+		}
 	});
 	
 	/* Обработка поля phone */
@@ -31,24 +40,29 @@ $(document).ready(function() {
 	var numbers = [];
 	
 	phone.keydown(function(event) {
-		if (event.key == "Tab")
-			return;
-		if (event.key == "Backspace")
+		console.log(event);
+		if (event.key == "Tab" || event.keyCode == 9)
+			return true;
+		if (event.key == "Backspace" || event.keyCode == 8)
 			numbers.splice(numbers.length-1, 1);
-		if (numbers.length < 10 && /^[0-9]$/i.test(event.key)) {
-			numbers.push(event.key);
+		var key = event.key || String.fromCharCode(event.keyCode || event.charCode);
+		if (numbers.length < 10 && /^[0-9]$/i.test(key)) {
+			numbers.push(key);
 		} else if (numbers.length >= 10) {
-			event.preventDefault();
+			return false;
 		}
 	});
+
 	phone.focusin(function(event) {
 		if (phone.val().length == 0)
 			phone.val("+7 (");
 	});
+
 	phone.focusout(function(event) {
 		if (phone.val() == "+7 (")
 			phone.val("");
 	});
+
 	phone.keyup(function(event) {
 		phone.val(format());
 	});

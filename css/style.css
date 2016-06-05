@@ -1,0 +1,518 @@
+@charset "UTF-8";
+/* Стили для формы отправки заказа */
+* {
+  font-family: "Helvetica Neue", sans-serif; }
+
+.form-field-content {
+  margin-top: 10px; }
+
+.form-label {
+  display: block;
+  min-width: 100px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: left; }
+
+.form-toggle input {
+  position: relative;
+  vertical-align: middle;
+  margin-left: 20px; }
+
+.form-submit {
+  text-align: center; }
+
+.no-visible {
+  display: none; }
+
+form#order-purchase {
+  position: relative;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: left; }
+  form#order-purchase input, form#order-purchase textarea {
+    border: 2px solid #FF9900;
+    border-radius: 0; }
+    form#order-purchase input:focus, form#order-purchase textarea:focus {
+      border-color: #FE2045; }
+  form#order-purchase textarea {
+    height: 150px; }
+  form#order-purchase input[type='text'], form#order-purchase input[type='tel'], form#order-purchase input[type='email'], form#order-purchase textarea {
+    padding: 5px 0 5px 5px;
+    width: 300px;
+    font-weight: 400; }
+  form#order-purchase input[type='submit'] {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    background-color: #3299BB;
+    color: #E9E9E9;
+    font-weight: 700;
+    font-variant: small-caps;
+    letter-spacing: 2px; }
+  form#order-purchase table tr {
+    text-align: center; }
+  form#order-purchase table .labels {
+    margin-right: 15px;
+    text-align: right;
+    color: #E9E9E9;
+    font-weight: lighter; }
+  form#order-purchase table .fields {
+    padding: 10px 0 10px 10px;
+    text-align: right;
+    color: #000000;
+    font-size: 1em; }
+
+/* Общие стили */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", sans-serif; }
+
+html, body {
+  height: 100%; }
+
+body {
+  background-color: #000000;
+  color: #E9E9E9; }
+
+p {
+  margin: 0; }
+
+/* Центрирование текста в каждой секции */
+/* --------------------------------------- */
+.section, .slide {
+  text-align: center; }
+
+/* Фон будет заполнять всю секцию целиком */
+/* --------------------------------------- */
+#section0,
+#section1,
+#section2,
+#section3,
+#section4,
+#slide1,
+#slide2,
+#slide3,
+#slide4 {
+  margin: 0;
+  padding: 60px 0 0 0;
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-box-shadow: inset 0 0 100px #000000, inset 0 0 100px #000000, inset 0 0 100px #000000;
+  -moz-box-shadow: inset 0 0 100px #000000, inset 0 0 100px #000000, inset 0 0 100px #000000;
+  box-shadow: inset 0 0 100px #000000, inset 0 0 100px #000000, inset 0 0 100px #000000; }
+
+#section2 {
+  padding: 0; }
+
+/* Определение фона секций */
+/* --------------------------------------- */
+#section0 {
+  background-image: url("../img/bg1.jpg"); }
+
+#section1 {
+  background-image: url("../img/bg2.jpg"); }
+
+#section2 {
+  background-image: url("../img/bg3.jpg"); }
+
+#section3 {
+  background-image: url("../img/bg4.jpg"); }
+
+#section4 {
+  background-image: url("../img/bg5.jpg"); }
+
+/* Определение фона слайдов */
+/* --------------------------------------- */
+/* Верхнее меню */
+#menu {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  text-align: center;
+  font-size: 20px;
+  font-variant: small-caps;
+  font-weight: 200; }
+  #menu li {
+    display: inline-block;
+    margin: 10px;
+    background: inherit; }
+    #menu li a {
+      display: block;
+      padding: 9px 18px;
+      color: #E9E9E9;
+      text-decoration: none; }
+      #menu li a:hover {
+        color: #BCBCBC; }
+  #menu li.active {
+    background: inherit; }
+    #menu li.active a {
+      display: block;
+      padding: 9px 18px;
+      color: #FF9900; }
+      #menu li.active a:hover {
+        color: #BCBCBC; }
+
+.backToPurchasingBtn {
+  position: absolute;
+  display: block;
+  top: 65px;
+  left: 10px;
+  width: 150px;
+  height: 150px;
+  padding-top: 55px;
+  border-radius: 50%;
+  background: #3299BB;
+  color: #E9E9E9;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  transform: rotate(-45deg) scale(1);
+  transition: all 0.25s linear; }
+  .backToPurchasingBtn:hover {
+    top: 65px;
+    left: 20px;
+    text-decoration: none;
+    background-color: #32BBBB;
+    transform: rotate(-45deg) scale(1.3); }
+
+.purchase-btn {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  padding: 20px 25px;
+  border: none;
+  background: #3299BB;
+  color: #E9E9E9;
+  font-size: 2.5em;
+  font-weight: lighter;
+  cursor: pointer;
+  text-decoration: none; }
+  .purchase-btn:active, .purchase-btn:hover {
+    text-decoration: none; }
+  .purchase-btn:hover {
+    background-color: #32BBBB; }
+  .purchase-btn:active {
+    background-color: #32BBBB; }
+
+/* Заголовки на слайдах */
+.title {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  color: #E9E9E9;
+  font-size: 3em;
+  font-weight: lighter;
+  letter-spacing: 5px; }
+
+/* Карточки причин */
+.card {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  width: 30%;
+  margin-right: 3%;
+  padding: 10px;
+  text-align: center; }
+  .card:last-child {
+    margin-right: 0; }
+  .card .image {
+    position: inherit;
+    width: 220px;
+    height: 220px;
+    margin-left: auto;
+    margin-right: auto; }
+  .card .unique-design-card {
+    background-image: url("http://tlt-land.ru/journal/images/design.jpg"); }
+  .card .high-quality-card {
+    background-image: url("http://brainhack.org/wp-content/uploads/sites//sites/3/2014/05/n-doors-lighting-guality01.jpeg"); }
+  .card .style-form-card {
+    background-image: url("http://img3.st.klumba-ua.com/img/used/2016/04/20/9710/9710828_2.jpg"); }
+  .card .card-desc {
+    float: right;
+    margin-top: 20px; }
+    .card .card-desc .card-title {
+      font-size: 120%; }
+
+.process {
+  display: block;
+  width: 80%;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto; }
+  .process .process-icon {
+    float: left;
+    width: 50%;
+    text-align: right; }
+    .process .process-icon img {
+      width: 300px;
+      height: auto; }
+  .process .process-desc {
+    display: table-cell;
+    float: right;
+    width: 50%;
+    height: 100% !important;
+    max-width: 500px;
+    padding-left: 20px;
+    text-align: left;
+    vertical-align: middle; }
+  .process:after {
+    content: "";
+    display: block;
+    clear: both; }
+
+/* Вспомогательные классы */
+.fl-l {
+  float: left; }
+
+.fl-r {
+  float: right; }
+
+.pos-abs {
+  position: absolute; }
+
+.w-50 {
+  width: 50%; }
+
+.w-25 {
+  width: 25%; }
+
+.h-100 {
+  height: 100%; }
+
+.center {
+  text-align: center; }
+
+.mt-20 {
+  margin-top: 20px; }
+
+.mt-40 {
+  margin-top: 40px; }
+
+.mt-60 {
+  margin-top: 60px; }
+
+.br-50 {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
+
+/* Мобильные экраны (портретная ориентация) */
+@media only screen and (max-width: 440px) and (orientation: portrait) {
+  body {
+    font-size: 10px; }
+
+  #section0,
+  #section1,
+  #section3,
+  #section4,
+  #slide1,
+  #slide2,
+  #slide3,
+  #slide4 {
+    padding-top: 30px; }
+
+  #menu {
+    width: 100%;
+    height: 30px; }
+    #menu li {
+      width: 20%;
+      margin: 0;
+      padding: 0; }
+      #menu li a {
+        padding: 5px 0;
+        font-size: 10px; }
+    #menu li.active a {
+      padding: 0; }
+    #menu li[data-menuanchor="fifth"] {
+      display: none; }
+
+  .title {
+    width: 95%; }
+
+  #section1 .title {
+    font-size: 15px; }
+
+  .card {
+    display: block;
+    margin-top: 5px;
+    width: 100%;
+    /* Сюда подставлять маленькие картинки вместо больших */ }
+    .card .image {
+      display: inline-block;
+      margin: 0 0 0 10px;
+      float: left;
+      width: 100px;
+      height: 100px;
+      border-radius: 0; }
+    .card .card-desc {
+      display: inline-block;
+      margin: 0;
+      width: 60%;
+      float: right;
+      text-align: left; }
+    .card:after {
+      clear: both;
+      display: block;
+      content: ""; }
+
+  .backToPurchasingBtn {
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 25px;
+    width: 70px;
+    height: 70px;
+    font-size: 10px;
+    line-height: 10px;
+    transform: none;
+    transition: all 0.25s linear; }
+    .backToPurchasingBtn:hover {
+      text-decoration: none;
+      background-color: #32BBBB;
+      transform: scale(1.3); }
+
+  .purchase-btn {
+    width: 95%;
+    text-align: center;
+    white-space: normal; }
+
+  .section1 .purchase-btn, .section3 .purchase-btn {
+    position: absolute !important;
+    bottom: 10px; }
+
+  .process {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+    .process .process-icon {
+      display: block;
+      float: none;
+      width: 100%;
+      text-align: center; }
+      .process .process-icon img {
+        width: 150px; }
+    .process .process-desc {
+      display: block;
+      float: none;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; } }
+/* Мобильный экран небольших смартфонов (альбомная ориентация) */
+@media only screen and (max-width: 780px) and (orientation: landscape) {
+  body {
+    font-size: 10px; }
+
+  .fp-tableCell {
+    padding: 0 !important;
+    vertical-align: middle !important; }
+
+  #section0,
+  #section1,
+  #section3,
+  #section4,
+  #slide1,
+  #slide2,
+  #slide3,
+  #slide4 {
+    padding-top: 30px; }
+
+  #menu {
+    height: 30px;
+    margin: 0;
+    padding: 0; }
+    #menu li {
+      margin: 0;
+      font-size: 10px; }
+
+  .backToPurchasingBtn {
+    top: -5px;
+    left: -5px;
+    padding-top: 25px;
+    width: 70px;
+    height: 70px;
+    z-index: 3;
+    font-size: 10px;
+    line-height: 10px; }
+
+  .purchase-btn {
+    margin-top: 20px; }
+
+  .card .image {
+    width: 100px;
+    height: 100px; }
+
+  .process .process-icon img {
+    width: 100px; } }
+@media screen and (max-width: 639px) and (orientation: landscape) {
+  .fp-tableCell {
+    padding: 0 !important; }
+
+  #section1 .title,
+  #section2 .title,
+  #slide1 .title,
+  #slide2 .title,
+  #slide3 .title,
+  #slide4 .title {
+    font-size: 12px; }
+
+  .purchase-btn {
+    padding: 10px 15px; } }
+@media screen and (min-width: 720px) and (max-width: 780px) and (orientation: landscape) {
+  .backToPurchasingBtn {
+    top: 30px; } }
+@media screen and (min-width: 781px) and (max-width: 1080px) and (orientation: landscape) {
+  body {
+    font-size: 15px; }
+
+  #section0,
+  #section1,
+  #section2,
+  #section3,
+  #section4,
+  #slide1,
+  #slide2,
+  #slide3,
+  #slide4 {
+    padding-top: 40px; }
+
+  #menu {
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    z-index: 1; }
+    #menu li {
+      margin: 0;
+      font-size: 15px; }
+
+  .backToPurchasingBtn {
+    top: -5px;
+    left: -5px;
+    padding-top: 30px;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+    font-size: 15px;
+    line-height: 15px; }
+
+  .card .image {
+    width: 120px;
+    height: 120px; } }
+/* Большие экраны */
+
+/*# sourceMappingURL=style.css.map */

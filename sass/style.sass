@@ -1,15 +1,5 @@
-// font
-$font-main: 'Helvetica Neue', sans-serif
-$font-size: 20px
-
-// colors
-$background-color: #000000
-$text-color: #E9E9E9
-$active-text-color: #FF9900
-$hover-text-color: #BCBCBC
-$btn-color: #3299BB
-$btn-active-color: #32BBBB
-$focused-elem-border: #FE2045
+@import "_variables"
+@import "_form"
 
 /* Общие стили */
 *
@@ -27,11 +17,6 @@ body
 
 p
 	margin: 0
-
-/* Переопределение стиля fullPage.js */
-//.fp-tableCell
-//	padding-left: 15%
-//	padding-right: 15%
 
 /* Центрирование текста в каждой секции */
 /* --------------------------------------- */
@@ -58,13 +43,7 @@ p
 	box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
 
 #section2
-	padding: 0 !important
-
-#slide1,
-#slide2,
-#slide3,
-#slide4
-	padding-top: 60px
+	padding: 0
 
 /* Определение фона секций */
 /* --------------------------------------- */
@@ -81,19 +60,19 @@ p
 
 /* Определение фона слайдов */
 /* --------------------------------------- */
-#slide1
-	background-image: url('../img/bg3.jpg')
-#slide2
-	background-image: url('../img/bg2.jpg')
-#slide3
-	background-image: url('../img/bg4.jpg')
-#slide4
-	background-image: url('../img/bg5.jpg')
+//#slide1
+//	background-image: url('../img/bg3.jpg')
+//#slide2
+//	background-image: url('../img/bg2.jpg')
+//#slide3
+//	background-image: url('../img/bg4.jpg')
+//#slide4
+//	background-image: url('../img/bg5.jpg')
 
 /* Верхнее меню */
 #menu
 	position: fixed
-	z-index: 70
+	z-index: 2
 	left: 0
 	top: 0
 	width: 100%
@@ -132,7 +111,7 @@ p
 	left: 10px
 	width: 150px
 	height: 150px
-	padding-top: 50px
+	padding-top: 55px
 	border-radius: 50%
 	background: $btn-color
 	color: $text-color
@@ -153,8 +132,7 @@ p
 .purchase-btn
 	position: relative
 	display: block
-	margin-left: auto
-	margin-right: auto
+	@include center
 	width: 70%
 	padding: 20px 25px
 	border: none
@@ -171,55 +149,10 @@ p
 	&:active
 		background-color: $btn-active-color
 
-/* Стили для формы отправки заказа */
-form#order-purchase
-	position: relative
-	display: none
-	margin-top: 0
-	margin-left: auto
-	margin-right: auto
-	width: 50%
-	text-align: left
-
-	input, textarea
-		border: 2px solid $active-text-color
-		border-radius: 0
-		&:focus
-			border-color: $focused-elem-border
-	textarea
-		height: 150px
-	input[type='text'], input[type='tel'], input[type='email'], textarea
-		padding: 5px 0 5px 5px
-		width: 300px
-		font-weight: 400
-	input[type='submit']
-		padding: 10px 20px
-		margin: 10px 0
-		border: none
-		background-color: $btn-color
-		color: $text-color
-		font-weight: 700
-		font-variant: small-caps
-		letter-spacing: 2px
-	table
-		tr
-			text-align: center
-		.labels
-			margin-right: 15px
-			text-align: right
-			color: $text-color
-			font-weight: lighter
-		.fields
-			padding: 10px 0 10px 10px
-			text-align: right
-			color: $background-color
-			font-size: 1em
-
 /* Заголовки на слайдах */
 .title
 	position: relative
-	margin-left: auto
-	margin-right: auto
+	@include center
 	max-width: 900px
 	color: $text-color
 	font-size: 3em
@@ -241,22 +174,44 @@ form#order-purchase
 		position: inherit
 		width: 220px
 		height: 220px
-		margin-right: auto
-		margin-left: auto
+		@include center
 	.unique-design-card
 		background-image: url('http://tlt-land.ru/journal/images/design.jpg')
 	.high-quality-card
 		background-image: url('http://brainhack.org/wp-content/uploads/sites//sites/3/2014/05/n-doors-lighting-guality01.jpeg')
 	.style-form-card
 		background-image: url('http://img3.st.klumba-ua.com/img/used/2016/04/20/9710/9710828_2.jpg')
-	.card-icon
-		float: left
 	.card-desc
 		float: right
 		margin-top: 20px
 		.card-title
 			font-size: 120%
 
+.process
+	display: block
+	width: 80%
+	margin-top: 30px
+	@include center
+	.process-icon
+		float: left
+		width: 50%
+		text-align: right
+		img
+			width: 300px
+			height: auto
+	.process-desc
+		display: table-cell
+		float: right
+		width: 50%
+		height: 100% !important
+		max-width: 500px
+		padding-left: 20px
+		text-align: left
+		vertical-align: middle
+	&:after
+		content: ""
+		display: block
+		clear: both
 /* Вспомогательные классы */
 .fl-l
 	float: left
@@ -298,7 +253,14 @@ form#order-purchase
 	body
 		font-size: $font-size / 2
 
-	.section
+	#section0,
+	#section1,
+	#section3,
+	#section4,
+	#slide1,
+	#slide2,
+	#slide3,
+	#slide4
 		padding-top: 30px
 
 	#menu
@@ -314,14 +276,54 @@ form#order-purchase
 		li.active
 			a
 				padding: 0
+		li[data-menuanchor="fifth"]
+			display: none
 
 	.title
-		width: 100%
+		width: 95%
 
-	#section1, #section2
+	#section1
 		.title
-			margin-top: 20px
 			font-size: $font-size * 0.75
+
+	.card
+		display: block
+		margin-top: 5px
+		width: 100%
+		.image
+			display: inline-block
+			margin: 0 0 0 10px
+			float: left
+			width: 100px
+			height: 100px
+			border-radius: 0
+
+		.card-desc
+			display: inline-block
+			margin: 0
+			width: 60%
+			float: right
+			text-align: left
+		&:after
+			clear: both
+			display: block
+			content: ""
+		/* Сюда подставлять маленькие картинки вместо больших */
+
+	.backToPurchasingBtn
+		position: static
+		@include center
+		padding-top: 25px
+		width: 70px
+		height: 70px
+		font-size: $font-size / 2
+		line-height: $font-size / 2
+		transform: none
+		transition: all 0.25s linear
+		&:hover
+			text-decoration: none
+			background-color: $btn-active-color
+			transform: scale(1.3)
 
 	.purchase-btn
 		width: 95%
@@ -333,37 +335,133 @@ form#order-purchase
 			position: absolute !important
 			bottom: 10px
 
-	.card
-		position: relative
-		display: block
-		width: 100%
-		padding: 5px
-		box-sizing: border-box
-		margin-top: 10px
-		vertical-align: middle
-		.image
-			position: relative
-			float: left
-			width: 150px
-			height: 150px
-		.card-title, .card-desc
-			position: relative
-			float: right
+	.process
+		width: 80%
+		@include center
+		.process-icon
+			display: block
+			float: none
+			width: 100%
+			text-align: center
+			img
+				width: 150px
+				//@include center
+		.process-desc
+			display: block
+			float: none
+			width: 100%
+			@include center
+			text-align: center
 
-/* Мобильный экран (альбомная ориентация) */
+/* Мобильный экран небольших смартфонов (альбомная ориентация) */
 @media only screen and (max-width: 780px) and (orientation: landscape)
-	.section
-		margin: 0
-		margin-left: 70px
+	body
+		font-size: $font-size / 2
+
+	.fp-tableCell
+		padding: 0 !important
+		vertical-align: middle !important
+
+	#section0,
+	#section1,
+	#section3,
+	#section4,
+	#slide1,
+	#slide2,
+	#slide3,
+	#slide4
+		padding-top: 30px
 
 	#menu
-		width: auto
+		height: 30px
+		margin: 0
+		padding: 0
 		li
-			position: relative
-			display: block
-			width: 70px
+			margin: 0
+			font-size: $font-size / 2
 
-@media screen and (min-width: 721px) and (max-width: 1080px)
+	.backToPurchasingBtn
+		top: -5px
+		left: -5px
+		padding-top: 25px
+		width: 70px
+		height: 70px
+		z-index: 3
+		font-size: $font-size / 2
+		line-height: $font-size / 2
+
+	.purchase-btn
+		margin-top: 20px
+
+	.card
+		.image
+			width: 100px
+			height: 100px
+
+	.process
+		.process-icon
+			img
+				width: 100px
+
+
+@media screen and (max-width: 639px) and (orientation: landscape)
+	.fp-tableCell
+		padding: 0 !important
+
+	#section1,
+	#section2,
+	#slide1,
+	#slide2,
+	#slide3,
+	#slide4
+		.title
+			font-size: $font-size * 0.6
+
+	.purchase-btn
+		padding: 10px 15px
+
+@media screen and (min-width: 720px)  and (max-width: 780px) and (orientation: landscape)
+	.backToPurchasingBtn
+		top: 30px
+
+@media screen and (min-width: 781px) and (max-width: 1080px) and (orientation: landscape)
+	body
+		font-size: $font-size * 0.75
+
+	#section0,
+	#section1,
+	#section2,
+	#section3,
+	#section4,
+	#slide1,
+	#slide2,
+	#slide3,
+	#slide4
+		padding-top: 40px
+
+	#menu
+		height: 40px
+		margin: 0
+		padding: 0
+		z-index: 1
+		li
+			margin: 0
+			font-size: $font-size * 0.75
+
+	.backToPurchasingBtn
+		top: -5px
+		left: -5px
+		padding-top: 30px
+		width: 80px
+		height: 80px
+		z-index: 2
+		font-size: $font-size * 0.75
+		line-height: $font-size * 0.75
+
+	.card
+		.image
+			width: 120px
+			height: 120px
 
 /* Большие экраны */
 @media screen and (min-width: 1081px)
