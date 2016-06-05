@@ -28,12 +28,14 @@ body
 p
 	margin: 0
 
-img
-	max-width: 100%
+/* Переопределение стиля fullPage.js */
+//.fp-tableCell
+//	padding-left: 15%
+//	padding-right: 15%
 
 /* Центрирование текста в каждой секции */
 /* --------------------------------------- */
-.section
+.section, .slide
 	text-align: center
 
 /* Фон будет заполнять всю секцию целиком */
@@ -55,6 +57,15 @@ img
 	-moz-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
 	box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
 
+#section2
+	padding: 0 !important
+
+#slide1,
+#slide2,
+#slide3,
+#slide4
+	padding-top: 60px
+
 /* Определение фона секций */
 /* --------------------------------------- */
 #section0
@@ -71,8 +82,12 @@ img
 /* Определение фона слайдов */
 /* --------------------------------------- */
 #slide1
-	background-image: url('../img/bg2.jpg')
+	background-image: url('../img/bg3.jpg')
 #slide2
+	background-image: url('../img/bg2.jpg')
+#slide3
+	background-image: url('../img/bg4.jpg')
+#slide4
 	background-image: url('../img/bg5.jpg')
 
 /* Верхнее меню */
@@ -110,37 +125,29 @@ img
 			&:hover
 				color: $hover-text-color
 
-/* Обертка для слайдов */
-.wrapper
-	position: relative
-	top: 0
-	left: 0
-	width: 100%
-	height: 100%
-	margin: 0
-	padding: 60px 0 0 0
-	text-align: center
-
 .backToPurchasingBtn
 	position: absolute
 	display: block
-	top: 29px
-	left: -40px
+	top: 65px
+	left: 10px
 	width: 150px
 	height: 150px
+	padding-top: 50px
 	border-radius: 50%
 	background: $btn-color
 	color: $text-color
 	text-align: center
-	line-height: 170px
-	font-size: 20px
+	vertical-align: middle
+	line-height: $font-size
+	font-size: $font-size
 	text-decoration: none
 	transform: rotate(-45deg) scale(1)
 	transition: all 0.25s linear
 	&:hover
-		top: 30px
-		left: -10px
+		top: 65px
+		left: 20px
 		text-decoration: none
+		background-color: $btn-active-color
 		transform: rotate(-45deg) scale(1.3)
 
 .purchase-btn
@@ -148,6 +155,7 @@ img
 	display: block
 	margin-left: auto
 	margin-right: auto
+	width: 70%
 	padding: 20px 25px
 	border: none
 	background: #3299BB
@@ -155,6 +163,11 @@ img
 	font-size: 2.5em
 	font-weight: lighter
 	cursor: pointer
+	text-decoration: none
+	&:active, &:hover
+		text-decoration: none
+	&:hover
+		background-color: $btn-active-color
 	&:active
 		background-color: $btn-active-color
 
@@ -167,6 +180,7 @@ form#order-purchase
 	margin-right: auto
 	width: 50%
 	text-align: left
+
 	input, textarea
 		border: 2px solid $active-text-color
 		border-radius: 0
@@ -206,7 +220,7 @@ form#order-purchase
 	position: relative
 	margin-left: auto
 	margin-right: auto
-	width: 70%
+	max-width: 900px
 	color: $text-color
 	font-size: 3em
 	font-weight: lighter
@@ -215,29 +229,33 @@ form#order-purchase
 /* Карточки причин */
 .card
 	position: relative
-	display: inline-block
-	width: 300px
-	margin: 20px 10px 20px 10px
+	display: table-cell
+	vertical-align: middle
+	width: 30%
+	margin-right: 3%
 	padding: 10px
 	text-align: center
+	&:last-child
+		margin-right: 0
 	.image
 		position: inherit
-		width: 280px
-		height: 280px
+		width: 220px
+		height: 220px
+		margin-right: auto
+		margin-left: auto
 	.unique-design-card
 		background-image: url('http://tlt-land.ru/journal/images/design.jpg')
 	.high-quality-card
 		background-image: url('http://brainhack.org/wp-content/uploads/sites//sites/3/2014/05/n-doors-lighting-guality01.jpeg')
 	.style-form-card
-		position: inherit
 		background-image: url('http://img3.st.klumba-ua.com/img/used/2016/04/20/9710/9710828_2.jpg')
-	.card-title
-		font-size: 120%
-		font-weight: 500
+	.card-icon
+		float: left
 	.card-desc
-		display: inline-block
-		height: 80px
-		vertical-align: bottom
+		float: right
+		margin-top: 20px
+		.card-title
+			font-size: 120%
 
 /* Вспомогательные классы */
 .fl-l
@@ -260,6 +278,9 @@ form#order-purchase
 
 .center
 	text-align: center
+
+.mt-20
+	margin-top: 20px
 
 .mt-40
 	margin-top: 40px
@@ -344,10 +365,5 @@ form#order-purchase
 
 @media screen and (min-width: 721px) and (max-width: 1080px)
 
-
+/* Большие экраны */
 @media screen and (min-width: 1081px)
-	.carousel
-		margin: 20px auto
-	.stop
-		width: 100%
-		height: 380px

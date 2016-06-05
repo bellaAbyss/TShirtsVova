@@ -16,12 +16,10 @@ body {
 p {
   margin: 0; }
 
-img {
-  max-width: 100%; }
-
+/* Переопределение стиля fullPage.js */
 /* Центрирование текста в каждой секции */
 /* --------------------------------------- */
-.section {
+.section, .slide {
   text-align: center; }
 
 /* Фон будет заполнять всю секцию целиком */
@@ -43,6 +41,15 @@ img {
   -moz-box-shadow: inset 0 0 100px #000000, inset 0 0 100px #000000, inset 0 0 100px #000000;
   box-shadow: inset 0 0 100px #000000, inset 0 0 100px #000000, inset 0 0 100px #000000; }
 
+#section2 {
+  padding: 0 !important; }
+
+#slide1,
+#slide2,
+#slide3,
+#slide4 {
+  padding-top: 60px; }
+
 /* Определение фона секций */
 /* --------------------------------------- */
 #section0 {
@@ -63,9 +70,15 @@ img {
 /* Определение фона слайдов */
 /* --------------------------------------- */
 #slide1 {
-  background-image: url("../img/bg2.jpg"); }
+  background-image: url("../img/bg3.jpg"); }
 
 #slide2 {
+  background-image: url("../img/bg2.jpg"); }
+
+#slide3 {
+  background-image: url("../img/bg4.jpg"); }
+
+#slide4 {
   background-image: url("../img/bg5.jpg"); }
 
 /* Верхнее меню */
@@ -103,37 +116,29 @@ img {
       #menu li.active a:hover {
         color: #BCBCBC; }
 
-/* Обертка для слайдов */
-.wrapper {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 60px 0 0 0;
-  text-align: center; }
-
 .backToPurchasingBtn {
   position: absolute;
   display: block;
-  top: 29px;
-  left: -40px;
+  top: 65px;
+  left: 10px;
   width: 150px;
   height: 150px;
+  padding-top: 50px;
   border-radius: 50%;
   background: #3299BB;
   color: #E9E9E9;
   text-align: center;
-  line-height: 170px;
+  vertical-align: middle;
+  line-height: 20px;
   font-size: 20px;
   text-decoration: none;
   transform: rotate(-45deg) scale(1);
   transition: all 0.25s linear; }
   .backToPurchasingBtn:hover {
-    top: 30px;
-    left: -10px;
+    top: 65px;
+    left: 20px;
     text-decoration: none;
+    background-color: #32BBBB;
     transform: rotate(-45deg) scale(1.3); }
 
 .purchase-btn {
@@ -141,13 +146,19 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 70%;
   padding: 20px 25px;
   border: none;
   background: #3299BB;
   color: #E9E9E9;
   font-size: 2.5em;
   font-weight: lighter;
-  cursor: pointer; }
+  cursor: pointer;
+  text-decoration: none; }
+  .purchase-btn:active, .purchase-btn:hover {
+    text-decoration: none; }
+  .purchase-btn:hover {
+    background-color: #32BBBB; }
   .purchase-btn:active {
     background-color: #32BBBB; }
 
@@ -198,7 +209,7 @@ form#order-purchase {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  max-width: 900px;
   color: #E9E9E9;
   font-size: 3em;
   font-weight: lighter;
@@ -207,29 +218,33 @@ form#order-purchase {
 /* Карточки причин */
 .card {
   position: relative;
-  display: inline-block;
-  width: 300px;
-  margin: 20px 10px 20px 10px;
+  display: table-cell;
+  vertical-align: middle;
+  width: 30%;
+  margin-right: 3%;
   padding: 10px;
   text-align: center; }
+  .card:last-child {
+    margin-right: 0; }
   .card .image {
     position: inherit;
-    width: 280px;
-    height: 280px; }
+    width: 220px;
+    height: 220px;
+    margin-right: auto;
+    margin-left: auto; }
   .card .unique-design-card {
     background-image: url("http://tlt-land.ru/journal/images/design.jpg"); }
   .card .high-quality-card {
     background-image: url("http://brainhack.org/wp-content/uploads/sites//sites/3/2014/05/n-doors-lighting-guality01.jpeg"); }
   .card .style-form-card {
-    position: inherit;
     background-image: url("http://img3.st.klumba-ua.com/img/used/2016/04/20/9710/9710828_2.jpg"); }
-  .card .card-title {
-    font-size: 120%;
-    font-weight: 500; }
+  .card .card-icon {
+    float: left; }
   .card .card-desc {
-    display: inline-block;
-    height: 80px;
-    vertical-align: bottom; }
+    float: right;
+    margin-top: 20px; }
+    .card .card-desc .card-title {
+      font-size: 120%; }
 
 /* Вспомогательные классы */
 .fl-l {
@@ -252,6 +267,9 @@ form#order-purchase {
 
 .center {
   text-align: center; }
+
+.mt-20 {
+  margin-top: 20px; }
 
 .mt-40 {
   margin-top: 40px; }
@@ -329,12 +347,6 @@ form#order-purchase {
       position: relative;
       display: block;
       width: 70px; } }
-@media screen and (min-width: 1081px) {
-  .carousel {
-    margin: 20px auto; }
-
-  .stop {
-    width: 100%;
-    height: 380px; } }
+/* Большие экраны */
 
 /*# sourceMappingURL=main.css.map */
