@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$.prototype.serialize = function() {
 		var data = {};
-		this.find("input").each(function(index, item) {
+		this.find(".form-field").each(function(index, item) {
 			if (item.type == "checkbox")
                 data[item.id] = item.checked;
             else
@@ -11,6 +11,7 @@ $(document).ready(function() {
 	};
 	
 	$('#date').datetimepicker({
+        theme: 'dark',
 		format: 'd.m.Y H:i',
 		lang: 'ru',
 		minDate: 0,
@@ -18,59 +19,64 @@ $(document).ready(function() {
 	});
 	
 	var form = $('form');
-	var notifier = form.find('#form-success');
 	
 	var name = form.find('#name');
-	// name.keydown(function(event) {
-	// 	if (/^[0-9]$/i.test(event.key))
-	// 		event.preventDefault();
-	// });
-
-	name.keypress(function(event) {
-		console.log("keypress", event);
-		var key = event.key || String.fromCharCode(event.charCode);
-		if (/^[0-9]$/i.test(key)) {
-			// event.preventDefault();
-			return false;
-		}
+	name.keydown(function(event) {
+        var key = event.key || String.fromCharCode(event.keyCode || event.charCode);
+		if (/^[0-9]$/i.test(key))
+            return false;
 	});
 	
 	/* Обработка поля phone */
 	var phone = form.find('input#phone');
 	var numbers = [];
-	
+
 	phone.keydown(function(event) {
-		console.log(event);
 		if (event.key == "Tab" || event.keyCode == 9)
 			return true;
 		if (event.key == "Backspace" || event.keyCode == 8)
 			numbers.splice(numbers.length-1, 1);
-		var key = event.key || String.fromCharCode(event.keyCode || event.charCode);
+        var key = event.key || String.fromCharCode(event.keyCode || event.charCode);
 		if (numbers.length < 10 && /^[0-9]$/i.test(key)) {
 			numbers.push(key);
 		} else if (numbers.length >= 10) {
-			return false;
+            return false;
 		}
 	});
-
 	phone.focusin(function(event) {
 		if (phone.val().length == 0)
 			phone.val("+7 (");
 	});
-
 	phone.focusout(function(event) {
 		if (phone.val() == "+7 (")
 			phone.val("");
 	});
 
-	phone.keyup(function(event) {
-		phone.val(format());
-	});
+    var parsePhone = function(event) {
+        var isBackspace = event.key == "Backspace" || event.keyCode == 8;
+        var autocompleteEvent = event.key == "Enter" || event.keyCode == 13 || event.type == "input";
+        if (!isBackspace && autocompleteEvent) {
+            var groups = /\+[7] \((\d{3})\) (\d{3})\-(\d{2})\-(\d{2})/.exec(phone.val());
+            // console.log(groups);
+            if (groups != null) {
+                numbers.splice(0, numbers.length);
+                for (var i = 1; i < groups.length; i++) {
+                    var group = groups[i].split("");
+                    for (var j = 0; j < group.length; j++)
+                        numbers.push(group[j]);
+                }
+            }
+        }
+        phone.val(format());
+    };
+
+	phone.keyup(parsePhone);
+    document.getElementById("phone").addEventListener("input", function(e) {parsePhone(e);});
 	
 	function format() {
 		var length = numbers.length;
 		var string = "";
-		
+
 		if (length >= 0)
 			string = "+7 (" + numbers.slice(0, 3).join("");
 		if (length >= 3)
@@ -79,20 +85,18 @@ $(document).ready(function() {
 			string = string + "-" + numbers.slice(6, 8).join("");
 		if (length >= 8)
 			string = string + "-" + numbers.slice(8, 10).join("");
-		
+
 		return string;
 	}
-	
+
 	var toggle = form.find("#delivery");
 	toggle.change(function(event) {
 		var checked = toggle.prop("checked");
 		form.find('.form-optional')
 			.css('display', checked ? 'block' : 'none');
-		// form.find('.form-optional input')
-		// 	.attr("required", checked);
 	});
 	form.find('.form-optional').css('display', 'none');
-	
+
 	form.submit(function(event) {
 		event.preventDefault();
 		var validity = true;
@@ -103,7 +107,7 @@ $(document).ready(function() {
 			}
 		});
 		if (!validity) {
-			return;
+			return validity;
 		}
 
 		$.ajax({
@@ -113,13 +117,11 @@ $(document).ready(function() {
 			data: { "data": form.serialize() }
 		})
             .done(function(data) {
-				notifier.html("Hoorah!");
+                form.find('#form-success').css("display", "block");
 			})
 			.fail(function(data) {
-				notifier.html("Error");
-			})
-			.always(function(data) {
-				console.log(data);
+                form.find('#form-fail').css("display", "block");
 			});
+        return false;
 	});
 });

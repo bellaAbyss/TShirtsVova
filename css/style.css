@@ -249,11 +249,12 @@ p {
       font-size: 120%; }
 
 .process {
-  display: block;
+  display: table-cell;
   width: 80%;
   margin-top: 30px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  vertical-align: middle; }
   .process .process-icon {
     float: left;
     width: 50%;
@@ -262,14 +263,12 @@ p {
       width: 300px;
       height: auto; }
   .process .process-desc {
-    display: table-cell;
     float: right;
     width: 50%;
     height: 100% !important;
     max-width: 500px;
     padding-left: 20px;
-    text-align: left;
-    vertical-align: middle; }
+    text-align: left; }
   .process:after {
     content: "";
     display: block;
@@ -312,7 +311,7 @@ p {
   border-radius: 50%; }
 
 /* Мобильные экраны (портретная ориентация) */
-@media only screen and (max-width: 440px) and (orientation: portrait) {
+@media only screen and (max-width: 440px) and (min-height: 541px) and (orientation: portrait) {
   body {
     font-size: 10px; }
 
@@ -372,6 +371,8 @@ p {
 
   .backToPurchasingBtn {
     position: static;
+    display: block;
+    bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 25px;
@@ -391,10 +392,6 @@ p {
     text-align: center;
     white-space: normal; }
 
-  .section1 .purchase-btn, .section3 .purchase-btn {
-    position: absolute !important;
-    bottom: 10px; }
-
   .process {
     width: 80%;
     margin-left: auto;
@@ -413,6 +410,115 @@ p {
       margin-left: auto;
       margin-right: auto;
       text-align: center; } }
+@media only screen and (max-width: 440px) and (max-height: 540px) and (orientation: portrait) {
+  body {
+    font-size: 10px; }
+
+  #section0,
+  #section1,
+  #section3,
+  #section4,
+  #slide1,
+  #slide2,
+  #slide3,
+  #slide4 {
+    padding-top: 30px; }
+
+  #menu {
+    width: 100%;
+    height: 30px; }
+    #menu li {
+      width: 20%;
+      margin: 0;
+      padding: 0; }
+      #menu li a {
+        padding: 5px 0;
+        font-size: 10px; }
+    #menu li.active a {
+      padding: 0; }
+    #menu li[data-menuanchor="fifth"] {
+      display: none; }
+
+  .title {
+    width: 95%; }
+
+  #section1 .title {
+    font-size: 15px; }
+
+  .card {
+    display: block;
+    margin-top: 5px;
+    width: 100%; }
+    .card .image {
+      display: inline-block;
+      margin: 0 0 0 10px;
+      float: left;
+      width: 100px;
+      height: 100px;
+      border-radius: 0; }
+    .card .card-desc {
+      display: inline-block;
+      margin: 0;
+      width: 60%;
+      float: right;
+      text-align: left; }
+    .card:after {
+      clear: both;
+      display: block;
+      content: ""; }
+
+  /* Сюда подставлять маленькие картинки вместо больших */
+  .backToPurchasingBtn {
+    position: absolute;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 150px;
+    left: -5px;
+    padding-top: 20px;
+    width: 65px;
+    height: 65px;
+    font-size: 10px;
+    line-height: 10px;
+    transform: rotate(-45deg) scale(1);
+    transition: all 0.25s linear; }
+    .backToPurchasingBtn:hover {
+      top: 150px;
+      left: -5px;
+      text-decoration: none;
+      background-color: #32BBBB;
+      transform: rotate(-45deg) scale(1.3); }
+
+  .purchase-btn {
+    width: 95%;
+    text-align: center;
+    white-space: normal; }
+
+  .process {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+    .process .process-icon {
+      display: block;
+      float: none;
+      width: 100%;
+      text-align: center; }
+      .process .process-icon img {
+        width: 150px; }
+    .process .process-desc {
+      display: block;
+      float: none;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; }
+
+  .section1 .backToPurchasingBtn, .section3 .backToPurchasingBtn {
+    position: absolute !important;
+    bottom: 10px !important;
+    left: 5px !important;
+    width: 65px !important;
+    height: 65px !important; } }
 /* Мобильный экран небольших смартфонов (альбомная ориентация) */
 @media only screen and (max-width: 780px) and (orientation: landscape) {
   body {
