@@ -165,7 +165,6 @@ p {
 /* Стили для формы отправки заказа */
 form#order-purchase {
   position: relative;
-  display: none;
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
