@@ -228,7 +228,6 @@
 		$('#fullpage').fullpage({
 			anchors: ['first', 'second', 'third', 'fourth', 'fifth'],
 			menu: '#menu',
-			sectionsColor: ['#000000', '#000000', '#000000', '#000000', '#000000'],
 			css3: false,
 			scrollingSpeed: 2000,
 			loopTop: true,
