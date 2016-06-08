@@ -1,0 +1,575 @@
+@import "_variables"
+@import "_form"
+
+/* Общие стили */
+*
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+	font-family: $font-main
+
+html, body
+	height: 100%
+
+body
+	background-color: $background-color
+	color: $text-color
+
+p
+	margin: 0
+
+/* Центрирование текста в каждой секции */
+/* --------------------------------------- */
+.section, .slide
+	text-align: center
+
+/* Фон будет заполнять всю секцию целиком */
+/* --------------------------------------- */
+#section0,
+#section1,
+#section2,
+#section3,
+#section4,
+#slide1,
+#slide2,
+#slide3,
+#slide4
+	margin: 0
+	padding: 60px 0 0 0
+	background-size: cover
+	background-attachment: fixed
+	-webkit-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+	-moz-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+	box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+
+#section2
+	padding: 0
+
+/* Определение фона секций */
+/* --------------------------------------- */
+#section0
+	background-image: url('../img/bg1.jpg')
+#section1
+	background-image: url('../img/bg2.jpg')
+#section2
+	background-image: url('../img/bg3.jpg')
+#section3
+	background-image: url('../img/bg4.jpg')
+#section4
+	background-image: url('../img/bg5.jpg')
+
+/* Определение фона слайдов */
+/* --------------------------------------- */
+//#slide1
+//	background-image: url('../img/bg3.jpg')
+//#slide2
+//	background-image: url('../img/bg2.jpg')
+//#slide3
+//	background-image: url('../img/bg4.jpg')
+//#slide4
+//	background-image: url('../img/bg5.jpg')
+
+/* Верхнее меню */
+#menu
+	position: fixed
+	z-index: 2
+	left: 0
+	top: 0
+	width: 100%
+	height: 60px
+	margin: 0
+	padding: 0
+	background: $background-color
+	text-align: center
+	font-size: $font-size
+	font-variant: small-caps
+	font-weight: 200
+	li
+		display: inline-block
+		margin: 10px
+		background: inherit
+		a
+			display: block
+			padding: 9px 18px
+			color: $text-color
+			text-decoration: none
+			&:hover
+				color: $hover-text-color
+	li.active
+		background: inherit
+		a
+			display: block
+			padding: 9px 18px
+			color: $active-text-color
+			&:hover
+				color: $hover-text-color
+
+.backToPurchasingBtn
+	position: absolute
+	display: block
+	top: 65px
+	left: 10px
+	width: 150px
+	height: 150px
+	padding-top: 55px
+	border-radius: 50%
+	background: $btn-color
+	color: $text-color
+	text-align: center
+	vertical-align: middle
+	line-height: $font-size
+	font-size: $font-size
+	text-decoration: none
+	transform: rotate(-45deg) scale(1)
+	transition: all 0.25s linear
+	&:hover
+		top: 65px
+		left: 20px
+		text-decoration: none
+		background-color: $btn-active-color
+		transform: rotate(-45deg) scale(1.3)
+
+.purchase-btn
+	position: relative
+	display: block
+	@include center
+	width: 70%
+	padding: 20px 25px
+	border: none
+	background: #3299BB
+	color: #E9E9E9
+	font-size: 2.5em
+	font-weight: lighter
+	cursor: pointer
+	text-decoration: none
+	&:active, &:hover
+		text-decoration: none
+	&:hover
+		background-color: $btn-active-color
+	&:active
+		background-color: $btn-active-color
+
+/* Заголовки на слайдах */
+.title
+	position: relative
+	@include center
+	max-width: 900px
+	color: $text-color
+	font-size: 3em
+	font-weight: lighter
+	letter-spacing: 5px
+
+/* Карточки причин */
+.card
+	position: relative
+	display: table-cell
+	vertical-align: middle
+	width: 30%
+	margin-right: 3%
+	padding: 10px
+	text-align: center
+	&:last-child
+		margin-right: 0
+	.image
+		position: inherit
+		width: 220px
+		height: 220px
+		@include center
+	.unique-design-card
+		background-image: url('http://tlt-land.ru/journal/images/design.jpg')
+	.high-quality-card
+		background-image: url('http://brainhack.org/wp-content/uploads/sites//sites/3/2014/05/n-doors-lighting-guality01.jpeg')
+	.style-form-card
+		background-image: url('http://img3.st.klumba-ua.com/img/used/2016/04/20/9710/9710828_2.jpg')
+	.card-desc
+		float: right
+		margin-top: 20px
+		.card-title
+			font-size: 120%
+
+.process
+	display: table-cell
+	width: 80%
+	margin-top: 30px
+	@include center
+	vertical-align: middle
+	.process-icon
+		float: left
+		width: 50%
+		text-align: right
+		img
+			width: 300px
+			height: auto
+	.process-desc
+		float: right
+		width: 50%
+		height: 100% !important
+		max-width: 500px
+		padding-left: 20px
+		text-align: left
+	&:after
+		content: ""
+		display: block
+		clear: both
+/* Вспомогательные классы */
+.fl-l
+	float: left
+
+.fl-r
+	float: right
+
+.pos-abs
+	position: absolute
+
+.w-50
+	width: 50%
+
+.w-25
+	width: 25%
+
+.h-100
+	height: 100%
+
+.center
+	text-align: center
+
+.mt-20
+	margin-top: 20px
+
+.mt-40
+	margin-top: 40px
+
+.mt-60
+	margin-top: 60px
+
+.br-50
+	-webkit-border-radius: 50%
+	-moz-border-radius: 50%
+	border-radius: 50%
+
+/* Мобильные экраны (портретная ориентация) */
+@media only screen and (max-width: 440px) and (min-height: 541px) and (orientation: portrait)
+	body
+		font-size: $font-size / 2
+
+	#section0,
+	#section1,
+	#section3,
+	#section4,
+	#slide1,
+	#slide2,
+	#slide3,
+	#slide4
+		padding-top: 30px
+
+	#menu
+		width: 100%
+		height: 30px
+		li
+			width: 20%
+			margin: 0
+			padding: 0
+			a
+				padding: 5px 0
+				font-size: $font-size / 2
+		li.active
+			a
+				padding: 0
+		li[data-menuanchor="fifth"]
+			display: none
+
+	.title
+		width: 95%
+
+	#section1
+		.title
+			font-size: $font-size * 0.75
+
+	.card
+		display: block
+		margin-top: 5px
+		width: 100%
+		.image
+			display: inline-block
+			margin: 0 0 0 10px
+			float: left
+			width: 100px
+			height: 100px
+			border-radius: 0
+
+		.card-desc
+			display: inline-block
+			margin: 0
+			width: 60%
+			float: right
+			text-align: left
+		&:after
+			clear: both
+			display: block
+			content: ""
+		/* Сюда подставлять маленькие картинки вместо больших */
+
+	.backToPurchasingBtn
+		position: static
+		display: block
+		bottom: 10px
+		@include center
+		padding-top: 25px
+		width: 70px
+		height: 70px
+		font-size: $font-size / 2
+		line-height: $font-size / 2
+		transform: none
+		transition: all 0.25s linear
+		&:hover
+			text-decoration: none
+			background-color: $btn-active-color
+			transform: scale(1.3)
+
+	.purchase-btn
+		width: 95%
+		text-align: center
+		white-space: normal
+
+	.process
+		width: 80%
+		@include center
+		.process-icon
+			display: block
+			float: none
+			width: 100%
+			text-align: center
+			img
+				width: 150px
+				//@include center
+		.process-desc
+			display: block
+			float: none
+			width: 100%
+			@include center
+			text-align: center
+
+@media only screen and (max-width: 440px) and (max-height: 540px) and (orientation: portrait)
+	body
+		font-size: $font-size / 2
+
+	#section0,
+	#section1,
+	#section3,
+	#section4,
+	#slide1,
+	#slide2,
+	#slide3,
+	#slide4
+		padding-top: 30px
+
+	#menu
+		width: 100%
+		height: 30px
+		li
+			width: 20%
+			margin: 0
+			padding: 0
+			a
+				padding: 5px 0
+				font-size: $font-size / 2
+		li.active
+			a
+				padding: 0
+		li[data-menuanchor="fifth"]
+			display: none
+
+	.title
+		width: 95%
+
+	#section1
+		.title
+			font-size: $font-size * 0.75
+
+	.card
+		display: block
+		margin-top: 5px
+		width: 100%
+		.image
+			display: inline-block
+			margin: 0 0 0 10px
+			float: left
+			width: 100px
+			height: 100px
+			border-radius: 0
+
+		.card-desc
+			display: inline-block
+			margin: 0
+			width: 60%
+			float: right
+			text-align: left
+		&:after
+			clear: both
+			display: block
+			content: ""
+	/* Сюда подставлять маленькие картинки вместо больших */
+
+	.backToPurchasingBtn
+		position: absolute
+		display: block
+		@include center
+		top: 150px
+		left: -5px
+		padding-top: 20px
+		width: 65px
+		height: 65px
+		font-size: $font-size / 2
+		line-height: $font-size / 2
+		transform: rotate(-45deg) scale(1)
+		transition: all 0.25s linear
+		&:hover
+			top: 150px
+			left: -5px
+			text-decoration: none
+			background-color: $btn-active-color
+			transform: rotate(-45deg) scale(1.3)
+
+	.purchase-btn
+		width: 95%
+		text-align: center
+		white-space: normal
+
+	.process
+		width: 80%
+		@include center
+		.process-icon
+			display: block
+			float: none
+			width: 100%
+			text-align: center
+			img
+				width: 150px
+		//@include center
+		.process-desc
+			display: block
+			float: none
+			width: 100%
+			@include center
+			text-align: center
+
+	.section1, .section3
+		.backToPurchasingBtn
+			position: absolute !important
+			bottom: 10px !important
+			left: 5px !important
+			width: 65px !important
+			height: 65px !important
+
+/* Мобильный экран небольших смартфонов (альбомная ориентация) */
+@media only screen and (max-width: 780px) and (orientation: landscape)
+	body
+		font-size: $font-size / 2
+
+	.fp-tableCell
+		padding: 0 !important
+		vertical-align: middle !important
+
+	#section0,
+	#section1,
+	#section3,
+	#section4,
+	#slide1,
+	#slide2,
+	#slide3,
+	#slide4
+		padding-top: 30px
+
+	#menu
+		height: 30px
+		margin: 0
+		padding: 0
+		li
+			margin: 0
+			font-size: $font-size / 2
+
+	.backToPurchasingBtn
+		top: -5px
+		left: -5px
+		padding-top: 25px
+		width: 70px
+		height: 70px
+		z-index: 3
+		font-size: $font-size / 2
+		line-height: $font-size / 2
+
+	.purchase-btn
+		margin-top: 20px
+
+	.card
+		.image
+			width: 100px
+			height: 100px
+
+	.process
+		.process-icon
+			img
+				width: 100px
+
+
+@media screen and (max-width: 639px) and (orientation: landscape)
+	.fp-tableCell
+		padding: 0 !important
+
+	#section1,
+	#section2,
+	#slide1,
+	#slide2,
+	#slide3,
+	#slide4
+		.title
+			font-size: $font-size * 0.6
+
+	.purchase-btn
+		padding: 10px 15px
+
+@media screen and (min-width: 720px)  and (max-width: 780px) and (orientation: landscape)
+	.backToPurchasingBtn
+		top: 30px
+
+@media screen and (min-width: 781px) and (max-width: 1080px) and (orientation: landscape)
+	body
+		font-size: $font-size * 0.75
+
+	#section0,
+	#section1,
+	#section2,
+	#section3,
+	#section4,
+	#slide1,
+	#slide2,
+	#slide3,
+	#slide4
+		padding-top: 40px
+
+	#menu
+		height: 40px
+		margin: 0
+		padding: 0
+		z-index: 1
+		li
+			margin: 0
+			font-size: $font-size * 0.75
+
+	.backToPurchasingBtn
+		top: -5px
+		left: -5px
+		padding-top: 30px
+		width: 80px
+		height: 80px
+		z-index: 2
+		font-size: $font-size * 0.75
+		line-height: $font-size * 0.75
+
+	.card
+		.image
+			width: 120px
+			height: 120px
+
+/* Большие экраны */
+@media screen and (min-width: 1081px)
