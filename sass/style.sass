@@ -1,9 +1,10 @@
 @import "_variables"
 @import "_form"
+@import "_switch"
 
 /* Общие стили */
 *
-	box-sizing: border-box
+	@include border-box
 	margin: 0
 	padding: 0
 	font-family: $font-main
@@ -25,49 +26,40 @@ p
 
 /* Фон будет заполнять всю секцию целиком */
 /* --------------------------------------- */
-#section0,
-#section1,
-#section2,
-#section3,
-#section4,
-#slide1,
-#slide2,
-#slide3,
-#slide4
-	margin: 0
-	padding: 60px 0 0 0
-	background-size: cover
-	background-attachment: fixed
-	-webkit-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
-	-moz-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
-	box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color, inset 0 0 100px $background-color
+//#section0,
+//#section1,
+//#section2,
+//#section3,
+//#section4,
+//#slide1,
+//#slide2,
+//#slide3,
+//#slide4
+//	margin: 0
+//	padding: 60px 0 0 0
+//	background-size: cover
+//	background-attachment: fixed
 
 #section2
 	padding: 0
 
 /* Определение фона секций */
 /* --------------------------------------- */
-#section0
-	background-image: url('../img/bg1.jpg')
-#section1
-	background-image: url('../img/bg2.jpg')
-#section2
-	background-image: url('../img/bg3.jpg')
-#section3
-	background-image: url('../img/bg4.jpg')
-#section4
-	background-image: url('../img/bg5.jpg')
+.full-background
+	width: 100%
+	height: 100%
+	position: fixed
+	background-position: center
+	background-repeat: no-repeat
 
-/* Определение фона слайдов */
-/* --------------------------------------- */
-//#slide1
-//	background-image: url('../img/bg3.jpg')
-//#slide2
-//	background-image: url('../img/bg2.jpg')
-//#slide3
-//	background-image: url('../img/bg4.jpg')
-//#slide4
-//	background-image: url('../img/bg5.jpg')
+.full-background img
+	width: 100%
+	height: 100%
+	position: fixed
+	opacity: 0
+	-webkit-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color
+	-moz-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color
+	box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color
 
 /* Верхнее меню */
 #menu
@@ -281,7 +273,7 @@ p
 	.title
 		width: 95%
 
-	#section1
+	#section1, #section4
 		.title
 			font-size: $font-size * 0.75
 
@@ -367,7 +359,7 @@ p
 		width: 100%
 		height: 30px
 		li
-			width: 20%
+			width: 25%
 			margin: 0
 			padding: 0
 			a
@@ -382,13 +374,15 @@ p
 	.title
 		width: 95%
 
-	#section1
+	#section1,
+	#section2,
+	#section4
 		.title
-			font-size: $font-size * 0.75
+			font-size: $font-size * 0.9
 
 	.card
 		display: block
-		margin-top: 5px
+		margin-top: 15px
 		width: 100%
 		.image
 			display: inline-block
@@ -527,6 +521,113 @@ p
 
 	.purchase-btn
 		padding: 10px 15px
+
+@media screen and (min-width: 441px) and (max-width: 719px) and (orientation: portrait)
+	body
+		font-size: $font-size * 0.75
+
+	#section0,
+	#section1,
+	#section3,
+	#section4,
+	#slide1,
+	#slide2,
+	#slide3,
+	#slide4
+		padding-top: 40px
+
+	#menu
+		width: 100%
+		height: 40px
+		li
+			width: 20%
+			margin: 0
+			padding: 0
+			a
+				padding: 5px 0
+				font-size: $font-size * 0.75
+		li.active
+			a
+				padding: 0
+
+	.title
+		width: 90%
+
+	#section1
+		.title
+			font-size: $font-size * 0.8
+
+	.card
+		display: block
+		margin-top: 5px
+		width: 100%
+		.image
+			display: inline-block
+			margin: 0 0 0 10px
+			float: left
+			width: 100px
+			height: 100px
+			border-radius: 0
+
+		.card-desc
+			display: inline-block
+			margin: 0
+			width: 60%
+			float: right
+			text-align: left
+			font-size: $font-size * 0.6
+		&:after
+			clear: both
+			display: block
+			content: ""
+	/* Сюда подставлять маленькие картинки вместо больших */
+
+	.backToPurchasingBtn
+		position: static
+		display: block
+		@include center
+		padding-top: 25px
+		width: 85px
+		height: 85px
+		font-size: $font-size * 0.75
+		line-height: $font-size * 0.75
+		transform: none
+		transition: all 0.25s linear
+		&:hover
+			text-decoration: none
+			background-color: $btn-active-color
+			transform: scale(1.3)
+
+	.purchase-btn
+		width: 95%
+		text-align: center
+		white-space: normal
+
+	.process
+		width: 80%
+		@include center
+		.process-icon
+			display: block
+			float: none
+			width: 100%
+			text-align: center
+			img
+				width: 150px
+		//@include center
+		.process-desc
+			display: block
+			float: none
+			width: 100%
+			@include center
+			text-align: center
+
+	.section1, .section3
+		.backToPurchasingBtn
+			position: absolute !important
+			bottom: 10px !important
+			left: 5px !important
+			width: 65px !important
+			height: 65px !important
 
 @media screen and (min-width: 720px)  and (max-width: 780px) and (orientation: landscape)
 	.backToPurchasingBtn

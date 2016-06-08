@@ -11,13 +11,16 @@
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
 	<meta name="author" content="Darya Kiryanova">
-	<meta name="description" content="Landing page for selling cool, high quality printed T-Shirts">
+	<meta name="description" content="Стильные футболки с качественным принтом. Креативный дизайн, высокое качество пошива. Отличный подарок себе и любимым.">
 	<meta name="keywords" content="стильные футболки, футболка, футболки, футболки с принтом">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="vendor/css/jquery.fullPage.css">
+	<link type="text/css" rel="stylesheet" href="/min/?f=css/style.css" />
+	<link type="text/css" rel="stylesheet" href="/min/?f=vendor/css/jquery.fullPage.css" />
 	<link rel="stylesheet"
 	      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 
 <body>
@@ -28,6 +31,7 @@
     <img src="img/bg4.jpg" alt="">
     <img src="img/bg5.jpg" alt="">
 </div>
+<div class="vignette"></div>
 
 <ul id="menu">
 	<li data-menuanchor="first" class="active"><a href="#first">Главная</a></li>
@@ -164,73 +168,75 @@
 
 	<div class="section" id="section4">
 		<p class="title">Оформление заказа</p>
-		<form id="order-purchase">
+		<form>
 			<div id="form-success"></div>
+			<div id="form-error"></div>
 
 			<div class="form-content">
-				<div class="form-field-content">
-					<label for="name" class="form-label">Name:</label>
-					<input id="name" class="form-field"
-					       type="text" required placeholder="Name">
-				</div>
-
-				<div class="form-field-content">
-					<label for="phone" class="form-label">Phone:</label>
-					<input id="phone" class="form-field"
-					       type="tel" required
-					       pattern="\+[7] [(]\d{3}[)] \d{3}-\d{2}-\d{2}"
-					       placeholder="+7 (495) 123-45-67">
-				</div>
-
-				<div class="form-field-content">
-					<label for="email" class="form-label">EMail:</label>
-					<input id="email" class="form-field"
-					       type="email" pattern=".*@.*\..*"
-					       placeholder="EMail">
-				</div>
-
-				<div class="form-field-content form-toggle">
-					<label class="form-label">Delivery?
-						<input id="delivery" type="checkbox" class="form-field">
-					</label>
-				</div>
-
-				<div class="form-optional">
-					<div class="form-field-content">
-						<label for="date" class="form-label">Date:</label>
-						<input id="date" class="form-field"
-						       type="text" pattern="\d{2}\.\d{2}\.\d{4} \d{2}:\d{2}"
-						       placeholder="Date and Time">
+				<div class="left">
+					<div class="form-field-content name">
+						<input id="name" class="form-field"
+						       type="text" required placeholder="Ваше имя">
 					</div>
-
-					<div class="form-field-content">
-						<label for="address" class="form-label">Address:</label>
-						<input id="address" class="form-field"
-						       type="text" placeholder="Address">
+					
+					<div class="form-field-content phone">
+						<input id="phone" class="form-field"
+						       type="tel" required
+						       pattern="\+[7] [(]\d{3}[)] \d{3}-\d{2}-\d{2}"
+						       placeholder="+7 (495) 123-45-67">
+					</div>
+					
+					<div class="form-field-content email">
+						<input id="email" class="form-field"
+						       type="email" pattern=".*@.*\..*"
+						       placeholder="E-mail адрес">
 					</div>
 				</div>
 
-                <div class="form-field-content">
-                    <label for="message" class="form-label">Message:</label>
-                    <textarea id="message" class="form-field"></textarea>
-                </div>
+				<div class="right">
+					<div class="form-field-content form-toggle">
+						<label class="form-label" for="delivery">Вам нужна доставка?</label>
+						<div class="onoffswitch">
+							<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="delivery">
+							<label class="onoffswitch-label" for="delivery">
+								<span class="onoffswitch-inner"></span>
+								<span class="onoffswitch-switch"></span>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-optional">
+						<div class="form-field-content">
+							<input id="date" class="form-field"
+							       type="text" pattern="\d{2}\.\d{2}\.\d{4} \d{2}:\d{2}"
+							       placeholder="Выберите время доставки">
+						</div>
+						
+						<div class="form-field-content">
+							<input id="address" class="form-field"
+							       type="text" placeholder="Адрес доставки">
+						</div>
+					</div>
+				</div>
 
-				<div class="form-field-content form-submit">
-					<button type="submit">Send</button>
+				<div class="bottom">
+					<div class="form-field-content message">
+						<textarea id="message" class="form-field" rows="3" placeholder="Оставьте свой комментарий"></textarea>
+					</div>
+					
+					<div class="form-field-content form-submit">
+						<input type="submit" value="Отправить">
+					</div>
 				</div>
 			</div>
 		</form>
 	</div>
 </div>
 
-<!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
-<script src="js/animation.js"></script>
-<script src="js/form.js"></script>
+<script type="text/javascript" src="/min/?b=js&amp;f=animation.js,form.js"></script>
 <script>
 	$(document).ready(function () {
 		$('#fullpage').fullpage({
@@ -256,3 +262,4 @@
 	$out = preg_replace('/>[\n]+/', '>', $out);
 	file_put_contents('index.html', $out);
 ?>
+

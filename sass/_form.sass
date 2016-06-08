@@ -4,65 +4,120 @@
 *
 	font-family: $font-main
 
+.form-content
+	position: relative
+	width: 60%
+	@include center
+	text-align: center
+	&:after
+		display: block
+		clear: both
+		content: ""
+
 .form-field-content
-	margin-top: 10px
+	@include border-box
+	display: block
+	margin-top: 20px
+	width: 100%
+	text-align: left
+	font-family: $font-main
+	font-size: 150%
+	font-weight: lighter
+	&.form-toggle
+		.form-label
+			font-size: 28px
+
+.left
+	width: 50%
+	float: left
+.right
+	width: 50%
+	float: right
+.bottom
+	float: none
+	margin-top: 20px
+	text-align: center
+	&:before
+		display: block
+		clear: both
+		content: ""
 
 .form-label
-	display: block
-	min-width: 100px
-	width: 100%
-	margin: 0 auto
-	text-align: left
-
-.form-toggle input
-	position: relative
+	@include border-box
+	display: inline-block
 	vertical-align: middle
-	margin-left: 20px
+	height: 100%
+	margin: 0
+	padding: 5px 20px 5px 5px
+	text-align: right
+	line-height: 100%
+
+.form-field
+	@include border-box
+	display: inline-block
+	width: 85%
+	height: 100%
+	padding: 0
+	text-align: left
+	&#delivery
+		float: left
+		width: 30px
+		height: 30px
+	
+input, textarea
+	padding: 5px !important
+	border: 2px solid $active-text-color
+	border-radius: 0
+	background-color: $text-color
+	color: $background-color
+	font-size: $font-size
+	font-weight: lighter
+	&:focus
+		border-color: $btn-active-color
+
+#message
+	display: block
+	width: 50%
+	@include center
 
 .form-submit
+	display: block
 	text-align: center
-
-.no-visible
-	display: none
-
-
-form#order-purchase
-	position: relative
-	margin-top: 0
-	@include center
-	width: 50%
-	text-align: left
-
-	input, textarea
-		border: 2px solid $active-text-color
-		border-radius: 0
-		&:focus
-			border-color: $focused-elem-border
-	textarea
-		height: 150px
-	input[type='text'], input[type='tel'], input[type='email'], textarea
-		padding: 5px 0 5px 5px
-		width: 300px
-		font-weight: 400
+	margin-left: auto
+	margin-right: auto
 	input[type='submit']
-		padding: 10px 20px
-		margin: 10px 0
+		background-color: $active-text-color
 		border: none
-		background-color: $btn-color
 		color: $text-color
 		font-weight: 700
-		font-variant: small-caps
-		letter-spacing: 2px
-	table
-		tr
-			text-align: center
-		.labels
-			margin-right: 15px
-			text-align: right
-			color: $text-color
-			font-weight: lighter
-		.fields
-			padding: 10px 0 10px 10px
-			text-align: right
-			color: $background-color
-			font-size: 1em
+
+/* Мобильные экраны (портретная ориентация) */
+@media only screen and (max-width: 440px) and (orientation: portrait)
+	.title
+		font-size: $font-size / 2
+
+	.form-content
+		width: 100%
+
+	.left, .right, .bottom
+		width: 100%
+		float: none
+		text-align: center
+
+	.form-field-content
+		width: 95%
+		@include center
+		margin-top: 5px
+
+	.form-label
+		line-height: $font-size * 0.75
+		font-size: $font-size * 0.75 !important
+
+	.message
+		@include center
+		width: 95%
+
+	input, textarea
+		@include center
+		font-size: $font-size / 2
+		padding: 3px

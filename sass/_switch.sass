@@ -1,0 +1,150 @@
+@import "_variables"
+
+.onoffswitch
+	display: inline-block
+	position: relative
+	vertical-align: middle
+	@include content-box
+	width: 80px
+	line-height: 100%
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+
+.onoffswitch-checkbox
+	display: none
+
+.onoffswitch-label
+	display: block
+	@include content-box
+	overflow: hidden
+	cursor: pointer
+	border: 2px solid #FFFFFF
+	border-radius: 40px
+
+.onoffswitch-inner
+	display: block
+	@include content-box
+	width: 200%
+	margin-left: -100%
+	transition: margin 0.3s ease-in 0s
+
+.onoffswitch-inner:before, .onoffswitch-inner:after
+	display: block
+	@include content-box
+	float: left
+	width: 50%
+	height: 28px
+	padding: 0
+	line-height: 28px
+	font-size: 18px
+	color: white
+	font-family: Trebuchet, Arial, sans-serif
+	font-weight: bold
+	box-sizing: border-box
+
+.onoffswitch-inner:before
+	content: "ДА"
+	padding-left: 14px
+	background-color: #EEEEEE
+	color: #FF9900
+
+.onoffswitch-inner:after
+	content: "НЕТ"
+	padding-right: 14px
+	background-color: #EEEEEE
+	color: #999999
+	text-align: right
+
+.onoffswitch-switch
+	display: block
+	@include content-box
+	width: 30px
+	margin: -1px
+	background: #A1A1A1
+	position: absolute
+	top: 0
+	bottom: 0
+	right: 58px
+	border: 2px solid #FFFFFF
+	border-radius: 50px
+	transition: all 0.3s ease-in 0s
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner
+	margin-left: 0
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch
+	right: 0px
+	background-color: #FF9900
+
+/* Мобильные экраны (портретная ориентация) */
+@media only screen and (max-width: 440px) and (orientation: portrait)
+	.onoffswitch
+		position: relative
+		@include content-box
+		width: 65px
+		-webkit-user-select: none
+		-moz-user-select: none
+		-ms-user-select: none
+
+	.onoffswitch-checkbox
+		display: none
+
+	.onoffswitch-label
+		display: block
+		overflow: hidden
+		cursor: pointer
+		border: 2px solid #999999
+		border-radius: 15px
+
+	.onoffswitch-inner
+		display: block
+		width: 200%
+		margin-left: -100%
+		transition: margin 0.3s ease-in 0s
+
+	.onoffswitch-inner:before, .onoffswitch-inner:after
+		display: block
+		float: left
+		width: 50%
+		height: 20px
+		padding: 0
+		line-height: 20px
+		font-size: 14px
+		color: white
+		font-family: "Helvetica Neue", Trebuchet, Arial, sans-serif
+		font-weight: bold
+		box-sizing: border-box
+
+	.onoffswitch-inner:before
+		content: "ДА"
+		padding-left: 10px
+		background-color: #EEEEEE
+		color: #3299BB
+
+	.onoffswitch-inner:after
+		content: "НЕТ"
+		padding-right: 10px
+		background-color: #EEEEEE
+		color: #999999
+		text-align: right
+
+	.onoffswitch-switch
+		display: block
+		width: 18px
+		margin: 1px
+		background: #A1A1A1
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 41px
+		border: 2px solid #999999
+		border-radius: 15px
+		transition: all 0.3s ease-in 0s
+
+	.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner
+		margin-left: 0
+
+	.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch
+		right: 0px
+		background-color: #27A1CA

@@ -11,7 +11,7 @@ $(document).ready(function() {
 	};
 	
 	$('#date').datetimepicker({
-        theme: 'dark',
+        theme: 'light',
 		format: 'd.m.Y H:i',
 		lang: 'ru',
 		minDate: 0,
@@ -90,6 +90,8 @@ $(document).ready(function() {
 	}
 
 	var toggle = form.find("#delivery");
+	toggle.prop('checked', false);
+	
 	toggle.change(function(event) {
 		var checked = toggle.prop("checked");
 		form.find('.form-optional')
@@ -113,7 +115,7 @@ $(document).ready(function() {
 		$.ajax({
 			method: 'POST',
 			async: true,
-			url: "/Action.php",
+			url: "../web/Action.php",
 			data: { "data": form.serialize() }
 		})
             .done(function(data) {
