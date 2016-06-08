@@ -18,12 +18,17 @@
 	<link rel="stylesheet" href="vendor/css/jquery.fullPage.css">
 	<link rel="stylesheet"
 	      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css">
-	<!--[if lt IE 9]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
 </head>
 
 <body>
+<div class="full-background">
+    <img src="img/bg1.jpg" alt="">
+    <img src="img/bg2.jpg" alt="">
+    <img src="img/bg3.jpg" alt="">
+    <img src="img/bg4.jpg" alt="">
+    <img src="img/bg5.jpg" alt="">
+</div>
+
 <ul id="menu">
 	<li data-menuanchor="first" class="active"><a href="#first">Главная</a></li>
 	<li data-menuanchor="second"><a href="#second">Слайд 2</a></li>
@@ -218,9 +223,12 @@
 	</div>
 </div>
 
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
-<script src="vendor/js/jquery.fullPage.min.js"></script>
 <script src="js/animation.js"></script>
 <script src="js/form.js"></script>
 <script>
