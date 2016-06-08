@@ -4,7 +4,7 @@ $(document).ready(function () {
     var opaque = {opacity: 1};
     var transparent = {opacity: 0};
 
-    var backgrounds = $(".full-background img");
+    var backgrounds = $(".full-background div");
 
     var iterator = (function () {
         var array = backgrounds.toArray();

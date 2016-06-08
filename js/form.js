@@ -120,9 +120,11 @@ $(document).ready(function() {
 		})
             .done(function(data) {
                 form.find('#form-success').css("display", "block");
+	            // нужно очищать значения полей
+	            form.find('.form-field').val('');
 			})
 			.fail(function(data) {
-                form.find('#form-fail').css("display", "block");
+                form.find('#form-error').css("display", "block");
 			});
         return false;
 	});

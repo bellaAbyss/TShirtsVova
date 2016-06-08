@@ -25,11 +25,11 @@
 
 <body>
 <div class="full-background">
-    <img src="img/bg1.jpg" alt="">
-    <img src="img/bg2.jpg" alt="">
-    <img src="img/bg3.jpg" alt="">
-    <img src="img/bg4.jpg" alt="">
-    <img src="img/bg5.jpg" alt="">
+	<div id="d-1" style="background: url('img/bg1.jpg') no-repeat center; background-size: cover;"></div>
+	<div id="d-2" style="background: url('img/bg2.jpg') no-repeat center; background-size: cover;"></div>
+	<div id="d-3" style="background: url('img/bg3.jpg') no-repeat center; background-size: cover;"></div>
+	<div id="d-4" style="background: url('img/bg4.jpg') no-repeat center; background-size: cover;"></div>
+	<div id="d-5" style="background: url('img/bg5.jpg') no-repeat center; background-size: cover;"></div>
 </div>
 <div class="vignette"></div>
 
@@ -169,7 +169,7 @@
 	<div class="section" id="section4">
 		<p class="title">Оформление заказа</p>
 		<form>
-			<div id="form-success"></div>
+			<div id="form-success">Спасибо! Ваш заказ оформлен!</div>
 			<div id="form-error"></div>
 
 			<div class="form-content">
