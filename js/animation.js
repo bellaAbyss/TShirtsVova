@@ -4,10 +4,10 @@ $(document).ready(function () {
     var opaque = {opacity: 1};
     var transparent = {opacity: 0};
 
-    var backgrounds = $(".full-background div");
-
     var iterator = (function () {
-        var array = backgrounds.toArray();
+        var backgrounds = $.map($(".full-background div").toArray(), function (item) {
+            return $(item);
+        });
         var length = backgrounds.length;
         var index = 0;
 
@@ -15,7 +15,7 @@ $(document).ready(function () {
             next: function () {
                 if (index == length)
                     index = 0;
-                return $(array[index++]);
+                return backgrounds[index++];
             },
             index: index
         };
@@ -31,11 +31,11 @@ $(document).ready(function () {
                 transparent,
                 {
                     duration: duration,
-                    progress: function (p, n, r) {
-                        if (!fire && n > 0.5) {
-                            fire = true;
-                            traverse();
-                        }
+                    done: function (p, n, r) {
+                        // if (!fire &amp;&amp; n &gt; 0.5) {
+                        //     fire = true;
+                        traverse();
+                        // }
                     }
                 }
             );

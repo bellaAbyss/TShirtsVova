@@ -14,10 +14,7 @@
 	<meta name="description" content="Стильные футболки с качественным принтом. Креативный дизайн, высокое качество пошива. Отличный подарок себе и любимым.">
 	<meta name="keywords" content="стильные футболки, футболка, футболки, футболки с принтом">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
-	<link type="text/css" rel="stylesheet" href="/min/?f=css/style.css" />
-	<link type="text/css" rel="stylesheet" href="/min/?f=vendor/css/jquery.fullPage.css" />
-	<link rel="stylesheet"
-	      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css">
+
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -25,11 +22,11 @@
 
 <body>
 <div class="full-background">
-	<div id="d-1" style="background: url('img/bg1.jpg') no-repeat center; background-size: cover;"></div>
-	<div id="d-2" style="background: url('img/bg2.jpg') no-repeat center; background-size: cover;"></div>
-	<div id="d-3" style="background: url('img/bg3.jpg') no-repeat center; background-size: cover;"></div>
-	<div id="d-4" style="background: url('img/bg4.jpg') no-repeat center; background-size: cover;"></div>
-	<div id="d-5" style="background: url('img/bg5.jpg') no-repeat center; background-size: cover;"></div>
+	<div id="d-1" style="background: url('img/bg1_mini.jpg') no-repeat center; background-size: cover;"></div>
+	<div id="d-2" style="background: url('img/bg2_mini.jpg') no-repeat center; background-size: cover;"></div>
+	<div id="d-3" style="background: url('img/bg3_mini.jpg') no-repeat center; background-size: cover;"></div>
+	<div id="d-4" style="background: url('img/bg4_mini.jpg') no-repeat center; background-size: cover;"></div>
+	<div id="d-5" style="background: url('img/bg5_mini.jpg') no-repeat center; background-size: cover;"></div>
 </div>
 <div class="vignette"></div>
 
@@ -94,7 +91,7 @@
 			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
 			<div class="process">
 				<div class="process-icon">
-					<img src="http://img.allw.mn/content/www/2011/04/8-fun-printed-t-shirts/1_jersey-shore-situation-tee_8-fun-printed-t-shirts.jpg">
+					<img src="img/bg1_480.jpg">
 				</div>
 				<div class="process-desc">
 					<h2>Собираем хлопок</h2>
@@ -111,7 +108,7 @@
 			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
 			<div class="process">
 				<div class="process-icon">
-					<img src="http://images.kooves.com/uploads/products/50262_86e32eb5d893d09a93501cf01d56bc85_image1_default.jpg">
+					<img src="img/bg2_480.jpg">
 				</div>
 				<div class="process-desc">
 					<h2>Синтезируем краски</h2>
@@ -128,7 +125,7 @@
 			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
 			<div class="process">
 				<div class="process-icon">
-					<img src="http://hideyourarms.com/wp-content/uploads/2014/01/4_akimski_1.jpg">
+					<img src="img/bg3_480.jpg">
 				</div>
 				<div class="process-desc">
 					<h2>Шьем футболку</h2>
@@ -145,7 +142,7 @@
 			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
 			<div class="process">
 				<div class="process-icon">
-					<img src="img/bg2.jpg">
+					<img src="img/bg4_480.jpg">
 				</div>
 				<div class="process-desc">
 					<h2>Делаем принт</h2>
@@ -233,6 +230,10 @@
 	</div>
 </div>
 
+<link type="text/css" rel="stylesheet" href="/min/?f=css/style.css" />
+<link type="text/css" rel="stylesheet" href="/min/?f=vendor/css/jquery.fullPage.css" />
+<link type="text/css" rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
@@ -241,11 +242,7 @@
 	$(document).ready(function () {
 		$('#fullpage').fullpage({
 			anchors: ['first', 'second', 'third', 'fourth', 'fifth'],
-			menu: '#menu',
-			css3: false,
-			scrollingSpeed: 2000,
-			loopTop: true,
-			loopBottom: true
+			menu: '#menu'
 		});
 	});
 </script>

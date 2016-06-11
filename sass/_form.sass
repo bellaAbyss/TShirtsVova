@@ -6,7 +6,7 @@
 
 .form-content
 	position: relative
-	width: 60%
+	width: 70%
 	@include center
 	text-align: center
 	&:after
@@ -90,8 +90,7 @@ input, textarea
 		border: none
 		color: $text-color
 		font-weight: 700
-		&:hover
-
+		//&:hover
 
 #form-success
 	display: none
@@ -102,30 +101,61 @@ input, textarea
 /* Мобильные экраны (портретная ориентация) */
 @media only screen and (max-width: 440px) and (orientation: portrait)
 	.title
-		font-size: $font-size / 2
+		font-size: $font-size * 0.75
 
 	.form-content
 		width: 100%
 
 	.left, .right, .bottom
-		width: 100%
+		width: 80%
+		@include center
 		float: none
 		text-align: center
 
 	.form-field-content
-		width: 95%
-		@include center
+		width: 100%
 		margin-top: 5px
+		text-align: center
 
 	.form-label
 		line-height: $font-size * 0.75
 		font-size: $font-size * 0.75 !important
 
-	.message
+	.form-field
+		width: 100%
 		@include center
-		width: 95%
+		max-width: 300px
+
+	#message
+		width: 100%
+		max-width: 300px
+		@include center
+
 
 	input, textarea
 		@include center
 		font-size: $font-size / 2
 		padding: 3px
+
+@media only screen and (max-width: 720px) and (orientation: landscape)
+	.form-content
+		width: 80%
+
+	.form-field-content
+		margin-top: 10px
+
+	.form-label
+		line-height: $font-size * 0.75
+		font-size: $font-size * 0.75 !important
+
+	input, textarea
+		@include center
+		font-size: $font-size / 2
+		padding: 3px
+
+	textarea
+		width: 500px
+
+@media only screen and (min-width: 721px) and (max-width: 1080px) and (orientation: portrait)
+	.form-content
+		width: 80%

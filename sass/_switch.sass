@@ -78,73 +78,24 @@
 	background-color: #FF9900
 
 /* Мобильные экраны (портретная ориентация) */
-@media only screen and (max-width: 440px) and (orientation: portrait)
+@media only screen and (max-width: 720px)
 	.onoffswitch
-		position: relative
-		@include content-box
-		width: 65px
-		-webkit-user-select: none
-		-moz-user-select: none
-		-ms-user-select: none
-
-	.onoffswitch-checkbox
-		display: none
+		width: 60px
 
 	.onoffswitch-label
-		display: block
-		overflow: hidden
-		cursor: pointer
-		border: 2px solid #999999
-		border-radius: 15px
-
-	.onoffswitch-inner
-		display: block
-		width: 200%
-		margin-left: -100%
-		transition: margin 0.3s ease-in 0s
+		border-radius: 30px
 
 	.onoffswitch-inner:before, .onoffswitch-inner:after
-		display: block
-		float: left
-		width: 50%
-		height: 20px
-		padding: 0
-		line-height: 20px
-		font-size: 14px
-		color: white
-		font-family: "Helvetica Neue", Trebuchet, Arial, sans-serif
-		font-weight: bold
-		box-sizing: border-box
-
-	.onoffswitch-inner:before
-		content: "ДА"
-		padding-left: 10px
-		background-color: #EEEEEE
-		color: #3299BB
+		height: 18px
+		line-height: 18px
+		font-size: 12px
 
 	.onoffswitch-inner:after
-		content: "НЕТ"
 		padding-right: 10px
-		background-color: #EEEEEE
-		color: #999999
-		text-align: right
 
 	.onoffswitch-switch
-		display: block
-		width: 18px
-		margin: 1px
-		background: #A1A1A1
-		position: absolute
-		top: 0
-		bottom: 0
-		right: 41px
-		border: 2px solid #999999
-		border-radius: 15px
-		transition: all 0.3s ease-in 0s
+		width: 20px
+		right: 40px
+		border-radius: 30px
 
-	.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner
-		margin-left: 0
-
-	.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch
-		right: 0px
-		background-color: #27A1CA
+//@media only screen and (max-width: 720px) and (orientation: landscape)
