@@ -1,0 +1,78 @@
+@import "_variables"
+
+@media screen and (max-width: 640px) and (orientation: landscape)
+	body
+		font-size: $font-size / 2
+
+	.fp-tableCell
+		padding: 0
+		vertical-align: middle
+
+	.section,
+	#slide2,
+	#slide3,
+	#slide4
+		padding-top: 10px
+
+	#menu
+		height: 30px
+		margin: 0
+		padding: 0
+		li
+			margin: 0
+			font-size: $font-size / 2
+
+	.profits
+		.title
+			font-size: $font-size
+
+	.go-to-purchase
+		@include link-to-purchase
+		font-size: $font-size * 0.8
+
+	.purchase-btn
+		margin-top: 20px
+
+	.card
+		padding: 0
+		margin-top: 20px
+		.card-image
+			width: 100px
+			height: 100px
+
+	.process
+		.process-icon
+			img
+				width: 100px
+
+@media screen and (min-width: 641px) and (max-width: 1007px) and (orientation: landscape)
+	*
+		font-size: $font-size * 0.6
+
+	#menu
+		height: 40px
+		margin: 0
+		padding: 0
+		z-index: 1
+		li
+			margin: 0
+			font-size: $font-size * 0.75
+
+	.go-to-purchase
+		@include link-to-purchase
+		font-size: $font-size
+
+	.card
+		margin-top: 10px
+		.card-image
+			width: 120px
+			height: 120px
+		.card-desc
+			margin-top: 10px
+
+	.process
+		.process-icon
+			img
+				width: 150px
+		.process-desc
+			font-size: $font-size * 0.75

@@ -31,11 +31,11 @@ $(document).ready(function () {
                 transparent,
                 {
                     duration: duration,
-                    done: function (p, n, r) {
-                        // if (!fire &amp;&amp; n &gt; 0.5) {
-                        //     fire = true;
-                        traverse();
-                        // }
+                    progress: function (p, n, r) {
+                        if (!fire && n > 0.5) {
+                            fire = true;
+                            traverse();
+                        }
                     }
                 }
             );

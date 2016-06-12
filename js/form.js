@@ -26,6 +26,14 @@ $(document).ready(function() {
 		lang: 'ru',
 		minDate: 0,
 		minTime: 0,
+		onShow: function () {
+			$.fn.fullpage.setAllowScrolling(false);
+			$.fn.fullpage.setKeyboardScrolling(false);
+		},
+		onClose: function () {
+			$.fn.fullpage.setAllowScrolling(true);
+			$.fn.fullpage.setKeyboardScrolling(true);
+		},
 		onSelectDate: function (ctx, $i) {
 			var minTime = '00:00';
 			if (isToday(ctx)) {
@@ -135,7 +143,7 @@ $(document).ready(function() {
 		$.ajax({
 				method: 'POST',
 				async: true,
-				url: "/Action.php",
+				url: "../web/Action.php",
 				data: { "data": form.serialize() }
 			})
 			.done(function(data) {

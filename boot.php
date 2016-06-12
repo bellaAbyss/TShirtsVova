@@ -22,11 +22,11 @@
 
 <body>
 <div class="full-background">
-	<div id="d-1" style="background: url('img/bg1_mini.jpg') no-repeat center; background-size: cover;"></div>
-	<div id="d-2" style="background: url('img/bg2_mini.jpg') no-repeat center; background-size: cover;"></div>
-	<div id="d-3" style="background: url('img/bg3_mini.jpg') no-repeat center; background-size: cover;"></div>
-	<div id="d-4" style="background: url('img/bg4_mini.jpg') no-repeat center; background-size: cover;"></div>
-	<div id="d-5" style="background: url('img/bg5_mini.jpg') no-repeat center; background-size: cover;"></div>
+	<div id="d-1"></div>
+	<div id="d-2"></div>
+	<div id="d-3"></div>
+	<div id="d-4"></div>
+	<div id="d-5"></div>
 </div>
 <div class="vignette"></div>
 
@@ -39,54 +39,53 @@
 </ul>
 
 <div id="fullpage">
-	<div class="section" id="section0">
+	<div class="section">
 		<p class="title">
 			Стильная футболка с уникальным дизайном за 10 минут
 		</p>
 		<a href="#fifth" class="purchase-btn mt-60">Оформить заказ и получить скидку 5%</a>
 	</div>
 
-	<div class="section" id="section1">
+	<div class="section profits">
 		<p class="title">
 			Почему выбирать футболку &lt;NAME&gt;
 		</p>
-		<div class="card mt-40">
-			<div class="image unique-design-card"></div>
+		<div class="card">
+			<div class="card-image unique-design-card"></div>
 			<div class="card-desc">
 				<div class="card-title">Уникальный дизайн</div>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur corporis, dicta ea eum
-					eveniet laborum maxime modi mollitia, quia quibusdam quis quos reprehenderit sapiente sit soluta
-					unde veniam veritatis!
+					eveniet laborum maxime modi mollitia!
 				</p>
 			</div>
 		</div>
-		<div class="card mt-40">
-			<div class="image high-quality-card"></div>
+		<div class="card">
+			<div class="card-image high-quality-card"></div>
 			<div class="card-desc">
 				<div class="card-title">Высокое качество</div>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium, adipisci asperiores
-					consectetur dicta doloribus eum hic inventore nesciunt quibusdam. Consequuntur esse fugiat illum
-					iure optio pariatur ut voluptate voluptatem.
+					consectetur dicta doloribus eum hic inventore nesciunt quibusdam.
 				</p>
 			</div>
 		</div>
-		<div class="card mt-40">
-			<div class="image style-form-card"></div>
+		<div class="card">
+			<div class="card-image style-form-card"></div>
 			<div class="card-desc">
 				<div class="card-title">Стильный крой</div>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, doloribus eius excepturi quaerat
-					ratione sint. Aliquam at distinctio error et facere harum maxime nesciunt suscipit ut veniam!
-					Consequuntur, explicabo, qui.
+					ratione sint. Aliquam at distinctio error et facere harum maxime nesciunt.
 				</p>
 			</div>
 		</div>
-		<a href="#fifth" class="backToPurchasingBtn">Оформить заказ</a>
+		<div>
+			<a href="#fifth" class="go-to-purchase">Получить скидку</a>
+		</div>
 	</div>
 
-	<div class="section" id="section2">
+	<div class="section">
 		<div class="slide" id="slide1">
 			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
 			<div class="process">
@@ -156,14 +155,14 @@
 		</div>
 	</div>
 
-	<div class="section" id="section3">
+	<div class="section">
 		<p class="title">Доставка в пределах Москвы и МО</p>
 		<p>
 			<a href="#fifth" class="purchase-btn mt-60">Получить скидку</a>
 		</p>
 	</div>
 
-	<div class="section" id="section4">
+	<div class="section">
 		<p class="title">Оформление заказа</p>
 		<form>
 			<div id="form-success">Спасибо! Ваш заказ оформлен!</div>
@@ -230,9 +229,9 @@
 	</div>
 </div>
 
-<link type="text/css" rel="stylesheet" href="/min/?f=css/style.css" />
-<link type="text/css" rel="stylesheet" href="/min/?f=vendor/css/jquery.fullPage.css" />
-<link type="text/css" rel="stylesheet"
+<link rel="stylesheet" href="/min/?f=css/style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.1/jquery.fullPage.min.css">
+<link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js"></script>
@@ -242,7 +241,8 @@
 	$(document).ready(function () {
 		$('#fullpage').fullpage({
 			anchors: ['first', 'second', 'third', 'fourth', 'fifth'],
-			menu: '#menu'
+			menu: '#menu',
+			animateAnchor: false
 		});
 	});
 </script>

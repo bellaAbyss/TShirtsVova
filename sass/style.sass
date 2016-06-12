@@ -1,8 +1,6 @@
 @import "_variables"
-@import "_form"
-@import "_switch"
 
-/* Общие стили */
+/* Общие стили (по умолчанию для laptop) */
 *
 	@include border-box
 	margin: 0
@@ -24,24 +22,12 @@ p
 .section, .slide
 	text-align: center
 
-/* Фон будет заполнять всю секцию целиком */
-/* --------------------------------------- */
-//#section0,
-//#section1,
-//#section2,
-//#section3,
-//#section4,
-//#slide1,
-//#slide2,
-//#slide3,
-//#slide4
-//	margin: 0
-//	padding: 60px 0 0 0
-//	background-size: cover
-//	background-attachment: fixed
-
-#section2
-	padding: 0
+.section,
+#slide2,
+#slide3,
+#slide4
+	padding-top: 10px
+	text-align: center
 
 /* Определение фона секций */
 /* --------------------------------------- */
@@ -50,14 +36,28 @@ p
 	height: 100%
 	position: fixed
 
-.full-background div
-	width: 100%
-	height: 100%
-	position: fixed
-	opacity: 0
-	-webkit-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color
-	-moz-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color
-	box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color
+.full-background
+	div
+		position: fixed
+		min-width: 100%
+		min-height: 100%
+		background-size: cover
+		background-position: center
+		background-repeat: no-repeat
+		opacity: 0
+		-webkit-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color
+		-moz-box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color
+		box-shadow: inset 0 0 100px $background-color, inset 0 0 100px $background-color
+	#d-1
+		background-image: url('../img/bg1_mini.jpg')
+	#d-2
+		background-image: url('../img/bg2_mini.jpg')
+	#d-3
+		background-image: url('../img/bg3_mini.jpg')
+	#d-4
+		background-image: url('../img/bg4_mini.jpg')
+	#d-5
+		background-image: url('../img/bg5_mini.jpg')
 
 /* Верхнее меню */
 #menu
@@ -94,30 +94,8 @@ p
 			&:hover
 				color: $hover-text-color
 
-.backToPurchasingBtn
-	position: absolute
-	display: block
-	top: 65px
-	left: 10px
-	width: 150px
-	height: 150px
-	padding-top: 55px
-	border-radius: 50%
-	background: $btn-color
-	color: $text-color
-	text-align: center
-	vertical-align: middle
-	line-height: $font-size
-	font-size: $font-size
-	text-decoration: none
-	transform: rotate(-45deg) scale(1)
-	transition: all 0.25s linear
-	&:hover
-		top: 65px
-		left: 20px
-		text-decoration: none
-		background-color: $btn-active-color
-		transform: rotate(-45deg) scale(1.3)
+.go-to-purchase
+	@include link-to-purchase
 
 .purchase-btn
 	position: relative
@@ -152,15 +130,16 @@ p
 /* Карточки причин */
 .card
 	position: relative
-	display: table-cell
-	vertical-align: middle
+	display: inline-block
+	vertical-align: top
 	width: 30%
+	margin-top: 30px
 	margin-right: 3%
 	padding: 10px
 	text-align: center
 	&:last-child
 		margin-right: 0
-	.image
+	.card-image
 		position: inherit
 		width: 220px
 		height: 220px
@@ -178,25 +157,24 @@ p
 			font-size: 120%
 
 .process
-	display: table-cell
-	width: 80%
+	display: block
+	width: 60%
 	margin-top: 30px
 	@include center
-	vertical-align: middle
 	.process-icon
-		float: left
+		display: inline-block
+		vertical-align: middle
 		width: 50%
 		text-align: right
 		img
+			float: right
 			width: 300px
 			height: auto
 	.process-desc
-		display: table-cell
+		position: relative
+		display: inline-block
 		vertical-align: middle
-		float: right
 		width: 50%
-		height: 100% !important
-		max-width: 500px
 		padding-left: 20px
 		text-align: left
 		h2
@@ -243,448 +221,7 @@ p
 	-moz-border-radius: 50%
 	border-radius: 50%
 
-/* Мобильные экраны (портретная ориентация) */
-@media only screen and (max-width: 440px) and (min-height: 541px) and (orientation: portrait)
-	body
-		font-size: $font-size / 2
-
-	#section0,
-	#section1,
-	#section3,
-	#section4,
-	#slide1,
-	#slide2,
-	#slide3,
-	#slide4
-		padding-top: 30px
-
-	#menu
-		width: 100%
-		height: 30px
-		li
-			width: 20%
-			margin: 0
-			padding: 0
-			a
-				padding: 5px 0
-				font-size: $font-size / 2
-		li.active
-			a
-				padding: 0
-		li[data-menuanchor="fifth"]
-			display: none
-
-	.title
-		width: 95%
-
-	#section1, #section4
-		.title
-			font-size: $font-size * 0.75
-
-	.card
-		display: block
-		margin-top: 5px
-		width: 100%
-		.image
-			display: inline-block
-			margin: 0 0 0 10px
-			float: left
-			width: 100px
-			height: 100px
-			border-radius: 0
-
-		.card-desc
-			display: inline-block
-			margin: 0
-			width: 60%
-			float: right
-			text-align: left
-		&:after
-			clear: both
-			display: block
-			content: ""
-		/* Сюда подставлять маленькие картинки вместо больших */
-
-	.backToPurchasingBtn
-		position: static
-		display: block
-		bottom: 10px
-		@include center
-		padding-top: 25px
-		width: 70px
-		height: 70px
-		font-size: $font-size / 2
-		line-height: $font-size / 2
-		transform: none
-		transition: all 0.25s linear
-		&:hover
-			text-decoration: none
-			background-color: $btn-active-color
-			transform: scale(1.3)
-
-	.purchase-btn
-		width: 95%
-		text-align: center
-		white-space: normal
-
-	.process
-		width: 80%
-		@include center
-		.process-icon
-			display: block
-			float: none
-			width: 100%
-			text-align: center
-			img
-				width: 150px
-				//@include center
-		.process-desc
-			display: block
-			float: none
-			width: 100%
-			@include center
-			text-align: center
-
-@media only screen and (max-width: 440px) and (max-height: 540px) and (orientation: portrait)
-	body
-		font-size: $font-size / 2
-
-	#section0,
-	#section1,
-	#section3,
-	#section4,
-	#slide1,
-	#slide2,
-	#slide3,
-	#slide4
-		padding-top: 30px
-
-	#menu
-		width: 100%
-		height: 30px
-		li
-			width: 25%
-			margin: 0
-			padding: 0
-			a
-				padding: 5px 0
-				font-size: $font-size / 2
-		li.active
-			a
-				padding: 0
-		li[data-menuanchor="fifth"]
-			display: none
-
-	.title
-		width: 95%
-
-	#section1,
-	#section2,
-	#section4
-		.title
-			font-size: $font-size * 0.9
-
-	.card
-		display: block
-		margin-top: 15px
-		width: 100%
-		.image
-			display: inline-block
-			margin: 0 0 0 10px
-			float: left
-			width: 100px
-			height: 100px
-			border-radius: 0
-
-		.card-desc
-			display: inline-block
-			margin: 0
-			width: 60%
-			float: right
-			text-align: left
-		&:after
-			clear: both
-			display: block
-			content: ""
-	/* Сюда подставлять маленькие картинки вместо больших */
-
-	.backToPurchasingBtn
-		position: absolute
-		display: block
-		@include center
-		top: 150px
-		left: -5px
-		padding-top: 20px
-		width: 65px
-		height: 65px
-		font-size: $font-size / 2
-		line-height: $font-size / 2
-		transform: rotate(-45deg) scale(1)
-		transition: all 0.25s linear
-		&:hover
-			top: 150px
-			left: -5px
-			text-decoration: none
-			background-color: $btn-active-color
-			transform: rotate(-45deg) scale(1.3)
-
-	.purchase-btn
-		width: 95%
-		text-align: center
-		white-space: normal
-
-	.process
-		width: 80%
-		@include center
-		.process-icon
-			display: block
-			float: none
-			width: 100%
-			text-align: center
-			img
-				width: 150px
-		//@include center
-		.process-desc
-			display: block
-			float: none
-			width: 100%
-			@include center
-			text-align: center
-
-	.section1, .section3
-		.backToPurchasingBtn
-			position: absolute !important
-			bottom: 10px !important
-			left: 5px !important
-			width: 65px !important
-			height: 65px !important
-
-	.ui-datepicker
-		position: absolute !important
-		top: 0 !important
-		font-size: 12px !important
-
-/* Мобильный экран небольших смартфонов (альбомная ориентация) */
-@media only screen and (max-width: 780px) and (orientation: landscape)
-	body
-		font-size: $font-size / 2
-
-	.fp-tableCell
-		padding: 0 !important
-		vertical-align: middle !important
-
-	#section0,
-	#section1,
-	#section3,
-	#section4,
-	#slide1,
-	#slide2,
-	#slide3,
-	#slide4
-		padding-top: 30px
-
-	#menu
-		height: 30px
-		margin: 0
-		padding: 0
-		li
-			margin: 0
-			font-size: $font-size / 2
-
-	.backToPurchasingBtn
-		top: -5px
-		left: -5px
-		padding-top: 25px
-		width: 70px
-		height: 70px
-		z-index: 3
-		font-size: $font-size / 2
-		line-height: $font-size / 2
-
-	.purchase-btn
-		margin-top: 20px
-
-	.card
-		.image
-			width: 100px
-			height: 100px
-
-	.process
-		.process-icon
-			img
-				width: 100px
-
-
-	.ui-datepicker
-		position: absolute !important
-		top: 0 !important
-		font-size: 12px !important
-
-@media screen and (max-width: 639px) and (orientation: landscape)
-	.fp-tableCell
-		padding: 0 !important
-
-	#section1,
-	#section2,
-	#slide1,
-	#slide2,
-	#slide3,
-	#slide4
-		.title
-			font-size: $font-size * 0.6
-
-	.purchase-btn
-		padding: 10px 15px
-
-@media screen and (min-width: 441px) and (max-width: 719px) and (orientation: portrait)
-	body
-		font-size: $font-size * 0.75
-
-	#section0,
-	#section1,
-	#section3,
-	#section4,
-	#slide1,
-	#slide2,
-	#slide3,
-	#slide4
-		padding-top: 40px
-
-	#menu
-		width: 100%
-		height: 40px
-		li
-			width: 20%
-			margin: 0
-			padding: 0
-			a
-				padding: 5px 0
-				font-size: $font-size * 0.75
-		li.active
-			a
-				padding: 0
-
-	.title
-		width: 90%
-
-	#section1
-		.title
-			font-size: $font-size * 0.8
-
-	.card
-		display: block
-		margin-top: 5px
-		width: 100%
-		.image
-			display: inline-block
-			margin: 0 0 0 10px
-			float: left
-			width: 100px
-			height: 100px
-			border-radius: 0
-
-		.card-desc
-			display: inline-block
-			margin: 0
-			width: 60%
-			float: right
-			text-align: left
-			font-size: $font-size * 0.6
-		&:after
-			clear: both
-			display: block
-			content: ""
-	/* Сюда подставлять маленькие картинки вместо больших */
-
-	.backToPurchasingBtn
-		position: static
-		display: block
-		@include center
-		padding-top: 25px
-		width: 85px
-		height: 85px
-		font-size: $font-size * 0.75
-		line-height: $font-size * 0.75
-		transform: none
-		transition: all 0.25s linear
-		&:hover
-			text-decoration: none
-			background-color: $btn-active-color
-			transform: scale(1.3)
-
-	.purchase-btn
-		width: 95%
-		text-align: center
-		white-space: normal
-
-	.process
-		width: 80%
-		@include center
-		.process-icon
-			display: block
-			float: none
-			width: 100%
-			text-align: center
-			img
-				width: 150px
-		//@include center
-		.process-desc
-			display: block
-			float: none
-			width: 100%
-			@include center
-			text-align: center
-
-	.section1, .section3
-		.backToPurchasingBtn
-			position: absolute !important
-			bottom: 10px !important
-			left: 5px !important
-			width: 65px !important
-			height: 65px !important
-
-@media screen and (min-width: 720px)  and (max-width: 780px) and (orientation: landscape)
-	.backToPurchasingBtn
-		top: 30px
-
-@media screen and (min-width: 781px) and (max-width: 1080px) and (orientation: landscape)
-	body
-		font-size: $font-size * 0.75
-
-	#section0,
-	#section1,
-	#section2,
-	#section3,
-	#section4,
-	#slide1,
-	#slide2,
-	#slide3,
-	#slide4
-		padding-top: 40px
-
-	#menu
-		height: 40px
-		margin: 0
-		padding: 0
-		z-index: 1
-		li
-			margin: 0
-			font-size: $font-size * 0.75
-
-	.backToPurchasingBtn
-		top: -5px
-		left: -5px
-		padding-top: 30px
-		width: 80px
-		height: 80px
-		z-index: 2
-		font-size: $font-size * 0.75
-		line-height: $font-size * 0.75
-
-	.card
-		.image
-			width: 120px
-			height: 120px
-
-/* Большие экраны */
-@media screen and (min-width: 1081px)
+@import "_style.media.portrait"
+@import "_style.media.landscape"
+@import "_form"
+@import "_switch"

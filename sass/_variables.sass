@@ -1,17 +1,3 @@
-@mixin center
-	margin-left: auto
-	margin-right: auto
-
-@mixin border-box
-	-webkit-box-sizing: border-box
-	-moz-box-sizing: border-box
-	box-sizing: border-box
-
-@mixin content-box
-	-webkit-box-sizing: content-box
-	-moz-box-sizing: content-box
-	box-sizing: content-box
-
 // fonts
 $font-main: 'Helvetica Neue', sans-serif
 $font-size: 20px
@@ -24,3 +10,53 @@ $hover-text-color: #BCBCBC
 $btn-color: #3299BB
 $btn-active-color: #32BBBB
 $focused-elem-border: #FE2045
+
+@mixin center
+	margin-left: auto !important
+	margin-right: auto !important
+
+@mixin border-box
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+@mixin content-box
+	-webkit-box-sizing: content-box
+	-moz-box-sizing: content-box
+	box-sizing: content-box
+
+@mixin link-to-purchase
+	font-size: $font-size * 2
+	position: static
+	display: block
+	width: 70%
+	@include center
+	color: $active-text-color
+	text-decoration: underline
+	&:active
+		color: $active-text-color
+	&:hover
+		color: $hover-text-color
+
+@mixin btn-to-purchase
+	position: static
+	display: block
+	width: 65px
+	height: 65px
+	padding-top: 25px
+	margin: 0 auto 0 auto
+	vertical-align: middle
+	border-radius: 50%
+	background: $btn-color
+	color: $text-color
+	text-align: center
+	line-height: $font-size / 2
+	font-size: $font-size / 2
+	text-decoration: none
+	transition: all 0.25s linear
+	&:hover
+		top: 65px
+		left: 20px
+		text-decoration: none
+		background-color: $btn-active-color
+		transform: scale(1.3)
