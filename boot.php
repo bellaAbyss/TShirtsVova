@@ -32,51 +32,53 @@
 
 <ul id="menu">
 	<li data-menuanchor="first" class="active"><a href="#first">Главная</a></li>
-	<li data-menuanchor="second"><a href="#second">Слайд 2</a></li>
-	<li data-menuanchor="third"><a href="#third">Слайд 3</a></li>
-	<li data-menuanchor="fourth"><a href="#fourth">Слайд 4</a></li>
+	<li data-menuanchor="second"><a href="#second">Почему мы?</a></li>
+	<li data-menuanchor="third"><a href="#third">Как мы работаем</a></li>
+	<li data-menuanchor="fourth"><a href="#fourth">Доставка</a></li>
 	<li data-menuanchor="fifth"><a href="#fifth">Заказать</a></li>
 </ul>
 
 <div id="fullpage">
 	<div class="section">
 		<p class="title">
-			Стильная футболка с уникальным дизайном за 10 минут
+			Стильная футболка с уникальным дизайном за одну минуту!
 		</p>
 		<a href="#fifth" class="purchase-btn mt-60">Оформить заказ и получить скидку 5%</a>
 	</div>
 
 	<div class="section profits">
 		<p class="title">
-			Почему выбирать футболку &lt;NAME&gt;
+			Особенность наших футболок
 		</p>
 		<div class="card">
 			<div class="card-image unique-design-card"></div>
 			<div class="card-desc">
-				<div class="card-title">Уникальный дизайн</div>
+				<div class="card-title">Дизайн</div>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur corporis, dicta ea eum
-					eveniet laborum maxime modi mollitia!
+					Оригинальное изображение сделано на заказ.
+					Футболка с таким же изображением присутствует в гардеробе
+					только у 50-ти людей в мире!
 				</p>
 			</div>
 		</div>
 		<div class="card">
 			<div class="card-image high-quality-card"></div>
 			<div class="card-desc">
-				<div class="card-title">Высокое качество</div>
+				<div class="card-title">Качество</div>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium, adipisci asperiores
-					consectetur dicta doloribus eum hic inventore nesciunt quibusdam.
+					Футболки сделаны из 100% хлопка.
+					Печать выполнена на передовом оборудовании,
+					что гарантирует качество и стойкость рисунка.
 				</p>
 			</div>
 		</div>
 		<div class="card">
 			<div class="card-image style-form-card"></div>
 			<div class="card-desc">
-				<div class="card-title">Стильный крой</div>
+				<div class="card-title">Крой</div>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, doloribus eius excepturi quaerat
-					ratione sint. Aliquam at distinctio error et facere harum maxime nesciunt.
+					Футболки отвечают классическим модным трендам.
+					Рукава оснащены манжетами, чтобы плотно облегать руку и дополнять образ.
 				</p>
 			</div>
 		</div>
@@ -87,68 +89,65 @@
 
 	<div class="section">
 		<div class="slide" id="slide1">
-			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
+			<h1 class="title">Как создаются футболки</h1>
 			<div class="process">
 				<div class="process-icon">
 					<img src="img/bg1_480.jpg">
 				</div>
 				<div class="process-desc">
-					<h2>Собираем хлопок</h2>
+					<h2>Создание концепции</h2>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut autem cupiditate
-						delectus doloremque est eum explicabo, fugit hic illum ipsa minus modi mollitia odit quaerat
-						quasi quibusdam quo ullam!
+						Перед созданием новой идеи представляем конечный результат.
+						Футболка - способ самовыражения сторонников видения команды.
+						На этом этапе мы рисуем первые эскизы и скетчи, закладываем в работу посыл.
 					</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="slide" id="slide2">
-			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
+			<h1 class="title">Как создаются футболки</h1>
 			<div class="process">
 				<div class="process-icon">
 					<img src="img/bg2_480.jpg">
 				</div>
 				<div class="process-desc">
-					<h2>Синтезируем краски</h2>
+					<h2>Создание принта</h2>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab at consequatur in laudantium optio
-						temporibus voluptatibus! Assumenda culpa debitis explicabo fugiat obcaecati placeat quisquam rem
-						totam. Blanditiis illo incidunt nobis.
+						В ходе обсуждений и правок появляется образ будущего изображения.
+						Если эскизы отражают концепцию работы, то они дорабатываются и улучшаются.
 					</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="slide" id="slide3">
-			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
+			<h1 class="title">Как создаются футболки</h1>
 			<div class="process">
 				<div class="process-icon">
 					<img src="img/bg3_480.jpg">
 				</div>
 				<div class="process-desc">
-					<h2>Шьем футболку</h2>
+					<h2>Выбор формы и кроя</h2>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur dolore fugiat
-						hic in incidunt obcaecati officia quis quo voluptates! Alias beatae doloribus iure magnam,
-						numquam quam repellat. Error, repellendus.
+						Работа над видом футболки. Здесь решается,
+						какие элементы стоит добавить или изменить в стандартном крое для создания образа.
 					</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="slide" id="slide4">
-			<h1 class="title">Процесс создания футболок &lt;NAME&gt;</h1>
+			<h1 class="title">Как создаются футболки</h1>
 			<div class="process">
 				<div class="process-icon">
 					<img src="img/bg4_480.jpg">
 				</div>
 				<div class="process-desc">
-					<h2>Делаем принт</h2>
+					<h2>Доведение до результата</h2>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias at commodi debitis earum eius
-						est eveniet, ex impedit laboriosam maxime necessitatibus optio perferendis rem rerum saepe ut,
-						velit vero?
+						Финальный концепт и принт отправляются на фабрику!
+						Мы следим за тем, чтобы футболки соответствовали идее и стандартам качества.
 					</p>
 				</div>
 			</div>
@@ -158,12 +157,12 @@
 	<div class="section">
 		<p class="title">Доставка в пределах Москвы и МО</p>
 		<p>
-			<a href="#fifth" class="purchase-btn mt-60">Получить скидку</a>
+			<a href="#fifth" class="purchase-btn mt-60">Получить футболку уже сегодня</a>
 		</p>
 	</div>
 
 	<div class="section">
-		<p class="title">Оформление заказа</p>
+		<p class="title">Оформите заказ за 30 секунд</p>
 		<form>
 			<div id="form-success">Спасибо! Ваш заказ оформлен!</div>
 			<div id="form-error"></div>
