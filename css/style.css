@@ -537,6 +537,10 @@ p {
   .process .process-desc {
     font-size: 15px; } }
 /* Styles for purchase form (laptop default) */
+#form-success {
+  font-size: 20px;
+  color: #FF9900; }
+
 .form-content {
   position: relative;
   width: 70%;

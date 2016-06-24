@@ -11,13 +11,35 @@ $(document).ready(function() {
 
 	$.prototype.serialize = function() {
 		var data = {};
-		this.find(".form-field").each(function(index, item) {
+		this.find("input").each(function(index, item) {
 			if (item.type == "checkbox")
 				data[item.id] = item.checked;
 			else
 				data[item.id] = item.value;
 		});
+		data["message"] = this.find("textarea").val();
 		return JSON.stringify({data: data});
+	};
+
+	$.prototype.flush = function() {
+		this.find("input").each(function(index, item) {
+			console.log(item.type);
+			switch (item.type) {
+				case "submit":
+					break;
+				case "checkbox":
+					item.checked = false;
+					break;
+				case "tel":
+					numbers.splice(0, numbers.length);
+					item.value = "";
+					break;
+				default:
+					item.value = "";
+					break;
+			}
+		});
+		this.find('textarea').val("");
 	};
 
 	$('#date').datetimepicker({
@@ -52,6 +74,8 @@ $(document).ready(function() {
 
 	var name = form.find('#name');
 	name.keydown(function(event) {
+		if (event.key == "Tab" || event.keyCode == 9)
+			return true;
 		var key = event.key || String.fromCharCode(event.keyCode || event.charCode);
 		if (/^[0-9]$/i.test(key))
 			return false;
@@ -101,7 +125,9 @@ $(document).ready(function() {
 	};
 
 	phone.keyup(parsePhone);
+	// phone.on("touch", function(e) {parsePhone(e);});
 	document.getElementById("phone").addEventListener("input", function(e) {parsePhone(e);});
+	document.getElementById("phone").addEventListener("touchend", function(e) {parsePhone(e);});
 
 	function format() {
 		var length = numbers.length;
@@ -140,13 +166,16 @@ $(document).ready(function() {
 			return validity;
 		}
 
+		console.log(form.serialize());
+
 		$.ajax({
 				method: 'POST',
 				async: true,
-				url: "../web/Action.php",
+				url: "web/Action.php",
 				data: { "data": form.serialize() }
 			})
 			.done(function(data) {
+				form.flush();
 				form.find('#form-success').css("display", "block");
 			})
 			.fail(function(data) {
@@ -154,4 +183,13 @@ $(document).ready(function() {
 			});
 		return false;
 	});
+
+	// jQuery('input').keypress(function(e) {
+	// 	var code = (e.keyCode ? e.keyCode : e.which);
+	// 	if ( (code==13) || (code==10))
+	// 	{
+	// 		jQuery(this).blur();
+	// 		// return false;
+	// 	}
+	// });
 });

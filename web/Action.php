@@ -4,7 +4,7 @@
  * Date: 5/29/16
  */
 
-require_once("web/Mail.php");
+require_once("Mail.php");
 
 try {
     $data = array();
@@ -20,6 +20,7 @@ try {
     $mail->addPoint("delivery", $data["delivery"] == true ? "Да" : "Нет");
     $mail->addPoint("date", $data["date"]);
     $mail->addPoint("address", $data["address"]);
+    $mail->addPoint("message", $data["message"]);
 
     $send = $mail->send();
     echo json_encode(array("status" => "OK", "send" => $send));

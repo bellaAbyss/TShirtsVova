@@ -164,7 +164,7 @@
 
 	<div class="section">
 		<p class="title">Оформление заказа</p>
-		<form>
+		<form onsubmit="return false;">
 			<div id="form-success">Спасибо! Ваш заказ оформлен!</div>
 			<div id="form-error"></div>
 
